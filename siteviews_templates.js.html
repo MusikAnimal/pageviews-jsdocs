@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: siteviews/templates.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: siteviews/templates.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @file Templates used by Chart.js for Siteviews app
+ * @author MusikAnimal
+ * @copyright 2016 MusikAnimal
+ */
+
+/**
+ * Templates used by Chart.js.
+ * Functions used within our app must be in the global scope.
+ * All quotations must be double-quotes or properly escaped.
+ * @type {Object}
+ */
+const templates = {
+  linearLegend: (datasets, scope) => {
+    let markup = '';
+
+    if (datasets.length === 1) {
+      const dataset = datasets[0];
+      return `&lt;div class="linear-legend--totals">
+        &lt;strong>${$.i18n('totals')}:&lt;/strong>
+        ${scope.formatNumber(dataset.sum)} (${scope.formatNumber(dataset.average)}/${$.i18n('day')})
+        &amp;bullet;
+        &lt;a href="https://${dataset.label}/wiki/Special:Statistics?uselang=${i18nLang}" target="_blank">${$.i18n('statistics')}&lt;/a>
+        &amp;bullet;
+        &lt;a href="${scope.getTopviewsURL(dataset.label)}" target="_blank">${$.i18n('most-viewed-pages')}&lt;/a>
+      &lt;/div>`;
+    }
+
+    if (datasets.length > 1) {
+      const total = datasets.reduce((a,b) => a + b.sum, 0);
+      markup = `&lt;div class="linear-legend--totals">
+        &lt;strong>${$.i18n('totals')}:&lt;/strong>
+        ${scope.formatNumber(total)} (${scope.formatNumber(Math.round(total / scope.numDaysInRange()))}/${$.i18n('day')})
+      &lt;/div>`;
+    }
+    markup += '&lt;div class="linear-legends">';
+
+    for (let i = 0; i &lt; datasets.length; i++) {
+      markup += `
+        &lt;span class="linear-legend">
+          &lt;div class="linear-legend--label" style="background-color:${scope.rgba(datasets[i].color, 0.8)}">
+            &lt;a href="https://${(datasets[i].label)}" target="_blank">${datasets[i].label}&lt;/a>
+          &lt;/div>
+          &lt;div class="linear-legend--counts">
+            ${scope.formatNumber(datasets[i].sum)} (${scope.formatNumber(datasets[i].average)}/${$.i18n('day')})
+          &lt;/div>
+          &lt;div class="linear-legend--links">
+            &lt;a href="https://${datasets[i].label}/wiki/Special:Statistics?uselang=${i18nLang}" target="_blank">${$.i18n('statistics')}&lt;/a>
+            &amp;bullet;
+            &lt;a href="${scope.getTopviewsURL(datasets[i].label)}" target="_blank">${$.i18n('most-viewed-pages')}&lt;/a>
+          &lt;/div>
+        &lt;/span>
+      `;
+    }
+    return markup += '&lt;/div>';
+  },
+
+  circularLegend(datasets, scope) {
+    const dataset = datasets[0],
+      total = dataset.data.reduce((a,b) => a + b);
+    let markup = `&lt;div class="linear-legend--totals">
+      &lt;strong>${$.i18n('totals')}:&lt;/strong>
+      ${scope.formatNumber(total)} (${scope.formatNumber(Math.round(total / scope.numDaysInRange()))}/${$.i18n('day')})
+    &lt;/div>`;
+
+    markup += '&lt;div class="linear-legends">';
+
+    for (let i = 0; i &lt; dataset.data.length; i++) {
+      const metaKey = Object.keys(dataset._meta)[0];
+      const label = dataset._meta[metaKey].data[i]._view.label;
+      markup += `
+        &lt;span class="linear-legend">
+          &lt;div class="linear-legend--label" style="background-color:${dataset.backgroundColor[i]}">
+            &lt;a href="https://${label}" target="_blank">${label}&lt;/a>
+          &lt;/div>
+          &lt;div class="linear-legend--counts">
+            ${scope.formatNumber(dataset.data[i])} (${scope.formatNumber(dataset.averages[i])}/${$.i18n('day')})
+          &lt;/div>
+          &lt;div class="linear-legend--links">
+            &lt;a href="https://${label}/wiki/Special:Statistics?uselang=${i18nLang}" target="_blank">${$.i18n('statistics')}&lt;/a>
+            &amp;bullet;
+            &lt;a href="${scope.getTopviewsURL(label)}" target="_blank">${$.i18n('most-viewed-pages')}&lt;/a>
+          &lt;/div>
+        &lt;/span>
+      `;
+    }
+    return markup += '&lt;/div>';
+  }
+};
+
+module.exports = templates;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="LangViews.html">LangViews</a></li><li><a href="MassViews.html">MassViews</a></li><li><a href="PageViews.html">PageViews</a></li><li><a href="Pv.html">Pv</a></li><li><a href="PvConfig.html">PvConfig</a></li><li><a href="RedirectViews.html">RedirectViews</a></li><li><a href="SiteViews.html">SiteViews</a></li><li><a href="TopViews.html">TopViews</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ChartHelpers">ChartHelpers</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#ListHelpers">ListHelpers</a></li><li><a href="global.html#siteMap">siteMap</a></li><li><a href="global.html#templates">templates</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Aug 09 2016 22:46:12 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
