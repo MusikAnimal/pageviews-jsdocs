@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: siteviews/templates.js</title>
+    <title>JSDoc: Source: meta/templates.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: siteviews/templates.js</h1>
+    <h1 class="page-title">Source: meta/templates.js</h1>
 
     
 
@@ -27,7 +27,7 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @file Templates used by Chart.js for Siteviews app
+ * @file Templates used by Chart.js for Metaviews app
  * @author MusikAnimal
  * @copyright 2016 MusikAnimal
  */
@@ -47,10 +47,6 @@ const templates = {
       return `&lt;div class="linear-legend--totals">
         &lt;strong>${$.i18n('totals')}:&lt;/strong>
         ${scope.formatNumber(dataset.sum)} (${scope.formatNumber(dataset.average)}/${$.i18n('day')})
-        &amp;bullet;
-        &lt;a href="https://${dataset.label}/wiki/Special:Statistics?uselang=${i18nLang}" target="_blank">${$.i18n('statistics')}&lt;/a>
-        &amp;bullet;
-        &lt;a href="${scope.getTopviewsURL(dataset.label)}" target="_blank">${$.i18n('most-viewed-pages')}&lt;/a>
       &lt;/div>`;
     }
 
@@ -67,16 +63,12 @@ const templates = {
       markup += `
         &lt;span class="linear-legend">
           &lt;div class="linear-legend--label" style="background-color:${scope.rgba(datasets[i].color, 0.8)}">
-            &lt;a href="https://${(datasets[i].label)}" target="_blank">${datasets[i].label}&lt;/a>
+            &lt;a href="/${(datasets[i].label)}" target="_blank">${datasets[i].label.upcase()}&lt;/a>
           &lt;/div>
           &lt;div class="linear-legend--counts">
             ${scope.formatNumber(datasets[i].sum)} (${scope.formatNumber(datasets[i].average)}/${$.i18n('day')})
           &lt;/div>
-          &lt;div class="linear-legend--links">
-            &lt;a href="https://${datasets[i].label}/wiki/Special:Statistics?uselang=${i18nLang}" target="_blank">${$.i18n('statistics')}&lt;/a>
-            &amp;bullet;
-            &lt;a href="${scope.getTopviewsURL(datasets[i].label)}" target="_blank">${$.i18n('most-viewed-pages')}&lt;/a>
-          &lt;/div>
+          &lt;div class="linear-legend--links">&lt;/div>
         &lt;/span>
       `;
     }
@@ -99,16 +91,12 @@ const templates = {
       markup += `
         &lt;span class="linear-legend">
           &lt;div class="linear-legend--label" style="background-color:${dataset.backgroundColor[i]}">
-            &lt;a href="https://${label}" target="_blank">${label}&lt;/a>
+            &lt;a href="/${label}" target="_blank">${label.upcase()}&lt;/a>
           &lt;/div>
           &lt;div class="linear-legend--counts">
             ${scope.formatNumber(dataset.data[i])} (${scope.formatNumber(dataset.averages[i])}/${$.i18n('day')})
           &lt;/div>
-          &lt;div class="linear-legend--links">
-            &lt;a href="https://${label}/wiki/Special:Statistics?uselang=${i18nLang}" target="_blank">${$.i18n('statistics')}&lt;/a>
-            &amp;bullet;
-            &lt;a href="${scope.getTopviewsURL(label)}" target="_blank">${$.i18n('most-viewed-pages')}&lt;/a>
-          &lt;/div>
+          &lt;div class="linear-legend--links">&lt;/div>
         &lt;/span>
       `;
     }

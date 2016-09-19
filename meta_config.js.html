@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: siteviews/config.js</title>
+    <title>JSDoc: Source: meta/config.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: siteviews/config.js</h1>
+    <h1 class="page-title">Source: meta/config.js</h1>
 
     
 
@@ -27,7 +27,7 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @file Configuration for Siteviews application
+ * @file Configuration for Metaviews application
  * @author MusikAnimal
  * @copyright 2016 MusikAnimal
  */
@@ -35,30 +35,23 @@
 const templates = require('./templates');
 
 /**
- * Configuration for Siteviews application.
- * This includes selectors, defaults, and other constants specific to Siteviews
+ * Configuration for Metaviews application.
+ * This includes selectors, defaults, and other constants specific to Metaviews
  * @type {Object}
  */
 const config = {
-  agentSelector: '#agent-select',
   chart: '.aqs-chart',
   circularLegend: templates.circularLegend,
-  dataSourceSelector: '#data-source-select',
   dateRangeSelector: '.aqs-date-range-selector',
   defaults: {
-    dateRange: 'latest-20',
-    projects: ['fr.wikipedia.org', 'de.wikipedia.org'],
-    source: 'pageviews'
+    dateRange: 'latest-20'
   },
   linearLegend: templates.linearLegend,
   logarithmicCheckbox: '.logarithmic-scale-option',
-  platformSelector: '#platform-select',
-  projectInput: '.aqs-project-input',
   select2Input: '.aqs-select2-selector',
-  validateParams: ['source', 'agent', 'platform'],
+  validateParams: ['tools'],
   validParams: {
-    source: ['pageviews', 'unique-devices'],
-    agent: ['all-agents', 'user', 'spider']
+    tools: ['pageviews', 'topviews', 'langviews', 'siteviews', 'massviews', 'redirectviews']
   }
 };
 

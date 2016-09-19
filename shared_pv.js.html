@@ -27,23 +27,27 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @file Shared code amongst all apps (Pageviews, Topviews, Langviews, Siteviews, Massviews)
+ * @file Shared code amongst all apps (Pageviews, Topviews, Langviews, Siteviews, Massviews, Redirect Views)
  * @author MusikAnimal, Kaldari
  * @copyright 2016 MusikAnimal
  * @license MIT License: https://opensource.org/licenses/MIT
  */
 
 const PvConfig = require('./pv_config');
+const siteMap = require('./site_map');
+const siteDomains = Object.keys(siteMap).map(key => siteMap[key]);
 
-/** Pv class, contains code amongst all apps (Pageviews, Topviews, Langviews, Siteviews, Massviews) */
+/** Pv class, contains code amongst all apps (Pageviews, Topviews, Langviews, Siteviews, Massviews, Redirect Views) */
 class Pv extends PvConfig {
   constructor(appConfig) {
     super(appConfig);
 
     /** assign initial class properties */
-    const defaults = this.config.defaults;
+    const defaults = this.config.defaults,
+      validParams = this.config.validParams;
     this.config = Object.assign({}, this.config, appConfig);
     this.config.defaults = Object.assign({}, defaults, appConfig.defaults);
+    this.config.validParams = Object.assign({}, validParams, appConfig.validParams);
 
     this.colorsStyleEl = undefined;
     this.storage = {}; // used as fallback when localStorage is not supported
@@ -120,6 +124,75 @@ class Pv extends PvConfig {
     $('.site-notice').append(
       `&lt;div class='alert alert-${level}${dismissable}'>${markup}&lt;/div>`
     );
+  }
+
+  /**
+   * Add site notice for invalid parameter
+   * @param {String} param - name of parameter
+   * @returns {null} nothing
+   */
+  addInvalidParamNotice(param) {
+    this.addSiteNotice(
+      'danger',
+      $.i18n('param-error-3', param, `/${this.app}/url_structure`),
+      $.i18n('invalid-params'),
+      true
+    );
+  }
+
+  /**
+   * Validate the date range of given params
+   *   and throw errors as necessary and/or set defaults
+   * @param {Object} params - as returned by this.parseQueryString()
+   * @returns {Boolean} true if there were no errors, false otherwise
+   */
+  validateDateRange(params) {
+    if (params.range) {
+      if (!this.setSpecialRange(params.range)) {
+        this.addInvalidParamNotice('range');
+        this.setSpecialRange(this.config.defaults.dateRange);
+      }
+    } else if (params.start) {
+      const dateRegex = /\d{4}-\d{2}-\d{2}$/;
+
+      // first set defaults
+      let startDate, endDate;
+
+      // then check format of start and end date
+      if (params.start &amp;&amp; dateRegex.test(params.start)) {
+        startDate = moment(params.start);
+      } else {
+        this.addInvalidParamNotice('start');
+        return false;
+      }
+      if (params.end &amp;&amp; dateRegex.test(params.end)) {
+        endDate = moment(params.end);
+      } else {
+        this.addInvalidParamNotice('end');
+        return false;
+      }
+
+      // check if they are outside the valid range or if in the wrong order
+      if (startDate &lt; this.config.minDate || endDate &lt; this.config.minDate) {
+        this.addSiteNotice('danger',
+          $.i18n('param-error-1', moment(this.config.minDate).format(this.dateFormat)),
+          $.i18n('invalid-params'),
+          true
+        );
+        return false;
+      } else if (startDate > endDate) {
+        this.addSiteNotice('danger', $.i18n('param-error-2'), $.i18n('invalid-params'), true);
+        return false;
+      }
+
+      /** directly assign startDate before calling setEndDate so events will be fired once */
+      this.daterangepicker.startDate = startDate;
+      this.daterangepicker.setEndDate(endDate);
+    } else {
+      this.setSpecialRange(this.config.defaults.dateRange);
+    }
+
+    return true;
   }
 
   clearSiteNotices() {
@@ -273,11 +346,21 @@ class Pv extends PvConfig {
   /**
    * Get the wiki URL given the page name
    *
-   * @param {string} page name
+   * @param {string} page - page name
    * @returns {string} URL for the page
    */
   getPageURL(page, project = this.project) {
     return `//${project.replace(/\.org$/, '').escape()}.org/wiki/${encodeURIComponent(page.score()).replace(/'/, escape)}`;
+  }
+
+  /**
+   * Get the wiki URL given the page name
+   *
+   * @param {string} site - site name (e.g. en.wikipedia.org)
+   * @returns {string} URL for the site
+   */
+  getSiteLink(site) {
+    return `&lt;a target="_blank" href="//${site}.org">${site}&lt;/a>`;
   }
 
   /**
@@ -292,6 +375,10 @@ class Pv extends PvConfig {
   }
 
   getLocaleDateString() {
+    if (!navigator.language) {
+      return this.config.defaults.dateFormat;
+    }
+
     const formats = {
       'ar-sa': 'DD/MM/YY',
       'bg-bg': 'DD.M.YYYY',
@@ -505,10 +592,6 @@ class Pv extends PvConfig {
       'es-us': 'M/D/YYYY'
     };
 
-    if (!navigator.language) {
-      return this.config.defaults.dateFormat;
-    }
-
     const key = navigator.language.toLowerCase();
     return formats[key] || this.config.defaults.dateFormat;
   }
@@ -541,6 +624,47 @@ class Pv extends PvConfig {
     } else {
       return reportURL;
     }
+  }
+
+  /**
+   * Get general information about a project, such as namespaces, title of the main page, etc.
+   * Data returned by the api is also stored in this.siteInfo
+   * @param {String} project - project such as en.wikipedia (with or without .org)
+   * @returns {Deferred} promise resolving with siteinfo
+   */
+  getSiteInfo(project) {
+    project = project.replace(/\.org$/, '');
+    const dfd = $.Deferred(),
+      cacheKey = `pageviews-siteinfo-${project}`;
+
+    // use cached site info if present
+    if (simpleStorage.hasKey(cacheKey)) {
+      this.siteInfo = simpleStorage.get(cacheKey);
+      dfd.resolve(this.siteInfo);
+    } else {
+      // otherwise fetch siteinfo and store in cache
+      $.ajax({
+        url: `https://${project}.org/w/api.php`,
+        data: {
+          action: 'query',
+          meta: 'siteinfo',
+          siprop: 'general|namespaces',
+          format: 'json'
+        },
+        dataType: 'jsonp'
+      }).done(data => {
+        this.siteInfo = data.query;
+
+        // cache for one week (TTL is in milliseconds)
+        simpleStorage.set(cacheKey, this.siteInfo, {TTL: 1000 * 60 * 60 * 24 * 7});
+
+        dfd.resolve(this.siteInfo);
+      }).fail(data => {
+        dfd.reject(data);
+      });
+    }
+
+    return dfd;
   }
 
   /**
@@ -581,7 +705,15 @@ class Pv extends PvConfig {
    * @return {Boolean} true or false
    */
   isChartApp() {
-    return !['langviews', 'massviews', 'redirectviews'].includes(this.app);
+    return !this.isListApp();
+  }
+
+  /**
+   * Is this one of the list-view apps?
+   * @return {Boolean} true or false
+   */
+  isListApp() {
+    return ['langviews', 'massviews', 'redirectviews'].includes(this.app);
   }
 
   /**
@@ -682,7 +814,7 @@ class Pv extends PvConfig {
       let chunk = chunks[i].split('=');
 
       if (multiParam &amp;&amp; chunk[0] === multiParam) {
-        params[multiParam] = chunk[1].split('|');
+        params[multiParam] = chunk[1].split('|').filter(param => !!param);
       } else {
         params[chunk[0]] = chunk[1];
       }
@@ -697,9 +829,9 @@ class Pv extends PvConfig {
    * @return {null} nothing
    */
   patchUsage(app) {
-    if (location.host !== 'localhost') {
+    if (metaRoot) {
       $.ajax({
-        url: `//tools.wmflabs.org/musikanimal/api/${app}_uses/${this.project || i18nLang}`,
+        url: `//${metaRoot}/${this.app}/${this.project || i18nLang}`,
         method: 'PATCH'
       });
     }
@@ -821,10 +953,10 @@ class Pv extends PvConfig {
       }
     });
 
-    this.daterangepicker.locale.format = this.dateFormat;
-    this.daterangepicker.updateElement();
-
     if (this.app !== 'topviews') {
+      this.daterangepicker.locale.format = this.dateFormat;
+      this.daterangepicker.updateElement();
+
       this.setupSelect2Colors();
 
       /**
@@ -942,6 +1074,12 @@ class Pv extends PvConfig {
     /** download listeners */
     $('.download-csv').on('click', this.exportCSV.bind(this));
     $('.download-json').on('click', this.exportJSON.bind(this));
+
+    /** project input listeners, saving and restoring old value if new one is invalid */
+    $(this.config.projectInput).on('focusin', function() {
+      this.dataset.value = this.value;
+    });
+    $(this.config.projectInput).on('change', e => this.validateProject(e));
   }
 
   /**
@@ -1005,7 +1143,7 @@ class Pv extends PvConfig {
           $.i18n('december')
         ]
       },
-      startDate: moment().subtract(this.config.defaults.daysAgo, 'days'),
+      startDate: moment().subtract(this.config.daysAgo, 'days'),
       minDate: this.config.minDate,
       maxDate: this.config.maxDate,
       ranges: ranges
@@ -1171,6 +1309,68 @@ class Pv extends PvConfig {
   }
 
   /**
+   * Validate basic params against what is defined in the config,
+   *   and if they are invalid set the default
+   * @param {Object} params - params as fetched by this.parseQueryString()
+   * @returns {Object} same params with some invalid parameters correted, as necessary
+   */
+  validateParams(params) {
+    this.config.validateParams.forEach(paramKey => {
+      if (paramKey === 'project' &amp;&amp; params.project) {
+        params.project = params.project.replace(/^www\./, '');
+      }
+
+      const defaultValue = this.config.defaults[paramKey],
+        paramValue = params[paramKey];
+
+      if (defaultValue &amp;&amp; !this.config.validParams[paramKey].includes(paramValue)) {
+        // only throw error if they tried to provide an invalid value
+        if (!!paramValue) {
+          this.addInvalidParamNotice(paramKey);
+        }
+
+        params[paramKey] = defaultValue;
+      }
+    });
+
+    return params;
+  }
+
+  /**
+   * Adds listeners to the project input for validations against the site map,
+   *   reverting to the old value if the new one is invalid
+   * @param {Boolean} [multilingual] - whether we should check if it is a multilingual project
+   * @returns {Boolean} whether or not validations passed
+   */
+  validateProject(multilingual = false) {
+    const projectInput = $(this.config.projectInput)[0];
+    let project = projectInput.value.replace(/^www\./, ''),
+      valid = false;
+
+    if (multilingual &amp;&amp; !this.isMultilangProject()) {
+      this.writeMessage(
+        $.i18n('invalid-lang-project', `&lt;a href='//${project.escape()}'>${project.escape()}&lt;/a>`),
+        true
+      );
+      project = projectInput.dataset.value;
+    } else if (siteDomains.includes(project)) {
+      this.clearMessages();
+      this.updateInterAppLinks();
+      valid = true;
+    } else {
+      this.writeMessage(
+        $.i18n('invalid-project', `&lt;a href='//${project.escape()}'>${project.escape()}&lt;/a>`),
+        true
+      );
+      project = projectInput.dataset.value;
+    }
+
+    projectInput.value = project;
+
+    return valid;
+  }
+
+  /**
    * Writes message just below the chart
    * @param {string} message - message to write
    * @param {boolean} clear - whether to clear any existing messages
@@ -1197,13 +1397,13 @@ module.exports = Pv;
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="LangViews.html">LangViews</a></li><li><a href="MassViews.html">MassViews</a></li><li><a href="PageViews.html">PageViews</a></li><li><a href="Pv.html">Pv</a></li><li><a href="PvConfig.html">PvConfig</a></li><li><a href="RedirectViews.html">RedirectViews</a></li><li><a href="SiteViews.html">SiteViews</a></li><li><a href="TopViews.html">TopViews</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ChartHelpers">ChartHelpers</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#ListHelpers">ListHelpers</a></li><li><a href="global.html#siteMap">siteMap</a></li><li><a href="global.html#templates">templates</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="LangViews.html">LangViews</a></li><li><a href="MassViews.html">MassViews</a></li><li><a href="MetaViews.html">MetaViews</a></li><li><a href="PageViews.html">PageViews</a></li><li><a href="Pv.html">Pv</a></li><li><a href="PvConfig.html">PvConfig</a></li><li><a href="RedirectViews.html">RedirectViews</a></li><li><a href="SiteViews.html">SiteViews</a></li><li><a href="TopViews.html">TopViews</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ChartHelpers">ChartHelpers</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#ListHelpers">ListHelpers</a></li><li><a href="global.html#siteMap">siteMap</a></li><li><a href="global.html#templates">templates</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Aug 09 2016 22:46:12 GMT-0400 (EDT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Sep 19 2016 02:19:27 GMT-0400 (EDT)
 </footer>
 
 <script> prettyPrint(); </script>

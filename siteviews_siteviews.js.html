@@ -75,7 +75,20 @@ class SiteViews extends mix(Pv).with(ChartHelpers) {
    * @returns {String} URL
    */
   getTopviewsURL(project) {
-    return `/topviews?${$.param(this.getParams())}&amp;project=${project}`;
+    let params = {
+      project,
+      platform: 'all-access'
+    };
+
+    // Use the month of the start date as the date value for Topviews.
+    // If we are on the cusp of a new month, use the previous month as last month's data may not be available yet.
+    let startDate = moment(this.daterangepicker.startDate);
+    if (startDate.month() === moment().month() || startDate.month() === moment().subtract(2, 'days').month()) {
+      startDate.subtract(1, 'month');
+    }
+    params.date = startDate.startOf('month').format('YYYY-MM');
+
+    return `/topviews?${$.param(params)}&amp;project=${project}`;
   }
 
   /**
@@ -86,49 +99,23 @@ class SiteViews extends mix(Pv).with(ChartHelpers) {
   popParams() {
     this.startSpinny();
 
-    let startDate, endDate, params = this.parseQueryString('sites');
+    let params = this.validateParams(
+      this.parseQueryString('sites')
+    );
 
-    this.patchUsage('sv');
+    this.patchUsage();
 
-    /**
-     * Check if we're using a valid range, and if so ignore any start/end dates.
-     * If an invalid range, throw and error and use default dates.
-     */
-    if (params.range) {
-      if (!this.setSpecialRange(params.range)) {
-        this.addSiteNotice('danger', $.i18n('param-error-3'), $.i18n('invalid-params'), true);
-        this.setSpecialRange(this.config.defaults.dateRange);
-      }
-    } else if (params.start) {
-      startDate = moment(params.start || moment().subtract(this.config.defaults.daysAgo, 'days'));
-      endDate = moment(params.end || Date.now());
-      if (startDate &lt; this.config.minDate || endDate &lt; this.config.minDate) {
-        this.addSiteNotice('danger', $.i18n('param-error-1', `${$.i18n('july')} 2015`), $.i18n('invalid-params'), true);
-        this.resetView();
-        return;
-      } else if (startDate > endDate) {
-        this.addSiteNotice('warning', $.i18n('param-error-2'), $.i18n('invalid-params'), true);
-        this.resetView();
-        return;
-      }
-      /** directly assign startDate before calling setEndDate so events will be fired once */
-      this.daterangepicker.startDate = startDate;
-      this.daterangepicker.setEndDate(endDate);
-    } else {
-      this.setSpecialRange(this.config.defaults.dateRange);
-    }
-
-    $(this.config.dataSourceSelector).val(params.source || 'pageviews');
-
+    $(this.config.dataSourceSelector).val(params.source);
     this.setupDataSourceSelector();
+    $(this.config.platformSelector).val(params.platform);
 
-    $(this.config.platformSelector).val(params.platform || 'all-access');
     if (params.source === 'pageviews') {
-      $(this.config.agentSelector).val();
+      $(this.config.agentSelector).val(params.agent);
     } else {
       $(this.config.dataSourceSelector).trigger('change');
     }
 
+    this.validateDateRange(params);
     this.resetSelect2();
 
     if (!params.sites || (params.sites.length === 1 &amp;&amp; !params.sites[0])) {
@@ -196,7 +183,7 @@ class SiteViews extends mix(Pv).with(ChartHelpers) {
    * @returns {null} - nothing
    */
   setupSelect2() {
-    const select2Input = $(this.config.select2Input);
+    const $select2Input = $(this.config.select2Input);
 
     let params = {
       ajax: {
@@ -219,8 +206,8 @@ class SiteViews extends mix(Pv).with(ChartHelpers) {
       minimumInputLength: 1
     };
 
-    select2Input.select2(params);
-    select2Input.on('change', this.processInput.bind(this));
+    $select2Input.select2(params);
+    $select2Input.on('change', this.processInput.bind(this));
   }
 
   setPlatformOptionValues() {
@@ -233,22 +220,30 @@ class SiteViews extends mix(Pv).with(ChartHelpers) {
     this.setPlatformOptionValues();
 
     $(this.config.dataSourceSelector).on('change', e => {
+      const value = $(this.config.platformSelector).val() || '',
+        wasMobileValue = value.includes('mobile');
+
       if (this.isPageviews()) {
-        $('.platform-select--mobile-web').show();
+        $('.platform-select--mobile-web, .platform-select--mobile-app').show();
+        $('.platform-select--mobile').hide();
         $(this.config.agentSelector).prop('disabled', false);
       } else {
-        $('.platform-select--mobile-web').hide();
+        $('.platform-select--mobile-web, .platform-select--mobile-app').hide();
+        $('.platform-select--mobile').show();
         $(this.config.agentSelector).val('user').prop('disabled', true);
       }
 
       this.setPlatformOptionValues();
 
-      /** reset to all-access if currently on mobile-app for unique-devices (not pageviews) */
-      if ($(this.config.platformSelector).val() === 'mobile-app' &amp;&amp; !this.isPageviews()) {
-        $(this.config.platformSelector).val('all-sites'); // chart will automatically re-render
-      } else {
-        this.processInput();
+      // If we're going from a mobile value select a corresponding mobile value for the new data source.
+      // Desktop and all-access share the same options so we don't need to add logic for those options.
+      if (wasMobileValue &amp;&amp; this.isUniqueDevices()) {
+        $(this.config.platformSelector).val('mobile-site'); // chart will automatically re-render
+      } else if (wasMobileValue &amp;&amp; this.isPageviews()) {
+        $(this.config.platformSelector).val('mobile-web');
       }
+
+      this.processInput();
     });
   }
 
@@ -275,88 +270,38 @@ class SiteViews extends mix(Pv).with(ChartHelpers) {
       return;
     }
 
-    /** @type {Object} everything we need to keep track of for the promises */
-    let xhrData = {
-      entities: $(config.select2Input).select2('val') || [],
-      labels: [], // Labels (dates) for the x-axis.
-      datasets: [], // Data for each site timeseries
-      errors: [], // Queue up errors to show after all requests have been made
-      fatalErrors: [], // Unrecoverable JavaScript errors
-      promises: []
-    };
+    this.params = location.search;
 
-    if (!xhrData.entities.length) {
+    const entities = $(config.select2Input).select2('val') || [];
+
+    if (!entities.length) {
       return this.resetView();
     }
 
-    this.params = location.search;
     this.prevChartType = this.chartType;
     this.clearMessages(); // clear out old error messages
     this.destroyChart();
     this.startSpinny();
 
-    /** Collect parameters from inputs. */
-    const startDate = this.daterangepicker.startDate.startOf('day'),
-      endDate = this.daterangepicker.endDate.startOf('day');
+    this.getPageViewsData(entities).done(xhrData => this.updateChart(xhrData));
+  }
 
-    /**
-     * Asynchronously collect the data from Analytics Query Service API,
-     * process it to Chart.js format and initialize the chart.
-     */
-    xhrData.entities.forEach((site, index) => {
-      const uriEncodedSite = encodeURIComponent(site);
+  /**
+   * Extends super.validateParams to handle special conditional params specific to Siteviews
+   * @param {Object} params - params as fetched by this.parseQueryString()
+   * @returns {Object} same params with some invalid parameters correted, as necessary
+   * @override
+   */
+  validateParams(params) {
+    if (params.source === 'unique-devices') {
+      this.config.validParams.platform = ['all-sites', 'desktop-site', 'mobile-site'];
+      this.config.defaults.platform = 'all-sites';
+      params.agent = 'user';
+    } else {
+      this.config.validParams.agent = ['all-agents', 'user', 'spider'];
+    }
 
-      /** @type {String} Url to query the API. */
-      const url = this.isPageviews() ? (
-        `https://wikimedia.org/api/rest_v1/metrics/pageviews/aggregate/${uriEncodedSite}` +
-        `/${$(this.config.platformSelector).val()}/${$(this.config.agentSelector).val()}/daily` +
-        `/${startDate.format(this.config.timestampFormat)}/${endDate.format(this.config.timestampFormat)}`
-      ) : (
-        `https://wikimedia.org/api/rest_v1/metrics/unique-devices/${uriEncodedSite}/${$(this.config.platformSelector).val()}/daily` +
-        `/${startDate.format(this.config.timestampFormat)}/${endDate.format(this.config.timestampFormat)}`
-      );
-      const promise = $.ajax({
-        url: url,
-        dataType: 'json'
-      });
-      xhrData.promises.push(promise);
-
-      promise.success(successData => {
-        try {
-          if (this.isPageviews()) {
-            successData = this.fillInZeros(successData, startDate, endDate);
-          }
-
-          /** Build the site's dataset. */
-          if (this.config.linearCharts.includes(this.chartType)) {
-            xhrData.datasets.push(this.getLinearData(successData, site, index));
-          } else {
-            xhrData.datasets.push(this.getCircularData(successData, site, index));
-          }
-
-          /** fetch the labels for the x-axis on success if we haven't already */
-          if (successData.items &amp;&amp; !xhrData.labels.length) {
-            xhrData.labels = successData.items.map(elem => {
-              return moment(elem.timestamp, this.config.timestampFormat).format(this.dateFormat);
-            });
-          }
-        } catch (err) {
-          return xhrData.fatalErrors.push(err);
-        }
-      }).fail(data => {
-        if (data.status === 404) {
-          this.writeMessage(
-            `&lt;a href='https://${site.escape()}'>${site.escape()}&lt;/a> - ${$.i18n('api-error-no-data')}`
-          );
-          // remove this site from the list of entities to analyze
-          xhrData.entities = xhrData.entities.filter(el => el !== site);
-        } else {
-          xhrData.errors.push(data.responseJSON.detail[0]);
-        }
-      });
-    });
-
-    $.whenAll(...xhrData.promises).always(this.updateChart.bind(this, xhrData));
+    return super.validateParams(params);
   }
 
   /**
@@ -400,13 +345,13 @@ $(document).ready(() => {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="LangViews.html">LangViews</a></li><li><a href="MassViews.html">MassViews</a></li><li><a href="PageViews.html">PageViews</a></li><li><a href="Pv.html">Pv</a></li><li><a href="PvConfig.html">PvConfig</a></li><li><a href="RedirectViews.html">RedirectViews</a></li><li><a href="SiteViews.html">SiteViews</a></li><li><a href="TopViews.html">TopViews</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ChartHelpers">ChartHelpers</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#ListHelpers">ListHelpers</a></li><li><a href="global.html#siteMap">siteMap</a></li><li><a href="global.html#templates">templates</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="LangViews.html">LangViews</a></li><li><a href="MassViews.html">MassViews</a></li><li><a href="MetaViews.html">MetaViews</a></li><li><a href="PageViews.html">PageViews</a></li><li><a href="Pv.html">Pv</a></li><li><a href="PvConfig.html">PvConfig</a></li><li><a href="RedirectViews.html">RedirectViews</a></li><li><a href="SiteViews.html">SiteViews</a></li><li><a href="TopViews.html">TopViews</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ChartHelpers">ChartHelpers</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#ListHelpers">ListHelpers</a></li><li><a href="global.html#siteMap">siteMap</a></li><li><a href="global.html#templates">templates</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Aug 09 2016 22:46:12 GMT-0400 (EDT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Sep 19 2016 02:19:27 GMT-0400 (EDT)
 </footer>
 
 <script> prettyPrint(); </script>
