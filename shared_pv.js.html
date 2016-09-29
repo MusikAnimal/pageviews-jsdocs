@@ -58,6 +58,7 @@ class Pv extends PvConfig {
     this.setupSettingsModal();
 
     this.params = null;
+    this.siteInfo = {};
 
     /** @type {null|Date} tracking of elapsed time */
     this.processStart = null;
@@ -132,9 +133,10 @@ class Pv extends PvConfig {
    * @returns {null} nothing
    */
   addInvalidParamNotice(param) {
+    const docLink = `&lt;a href='/${this.app}/url_structure'>${$.i18n('documentation')}&lt;/a>`;
     this.addSiteNotice(
       'danger',
-      $.i18n('param-error-3', param, `/${this.app}/url_structure`),
+      $.i18n('param-error-3', param, docLink),
       $.i18n('invalid-params'),
       true
     );
@@ -350,7 +352,7 @@ class Pv extends PvConfig {
    * @returns {string} URL for the page
    */
   getPageURL(page, project = this.project) {
-    return `//${project.replace(/\.org$/, '').escape()}.org/wiki/${encodeURIComponent(page.score()).replace(/'/, escape)}`;
+    return `//${project.replace(/\.org$/, '').escape()}.org/wiki/${page.score().replace(/'/, escape)}`;
   }
 
   /**
@@ -630,16 +632,19 @@ class Pv extends PvConfig {
    * Get general information about a project, such as namespaces, title of the main page, etc.
    * Data returned by the api is also stored in this.siteInfo
    * @param {String} project - project such as en.wikipedia (with or without .org)
-   * @returns {Deferred} promise resolving with siteinfo
+   * @returns {Deferred} promise resolving with siteinfo,
+   *   along with any other cached siteinfo for other projects
    */
-  getSiteInfo(project) {
+  fetchSiteInfo(project) {
     project = project.replace(/\.org$/, '');
     const dfd = $.Deferred(),
       cacheKey = `pageviews-siteinfo-${project}`;
 
+    if (this.siteInfo[project]) return dfd.resolve(this.siteInfo);
+
     // use cached site info if present
     if (simpleStorage.hasKey(cacheKey)) {
-      this.siteInfo = simpleStorage.get(cacheKey);
+      this.siteInfo[project] = simpleStorage.get(cacheKey);
       dfd.resolve(this.siteInfo);
     } else {
       // otherwise fetch siteinfo and store in cache
@@ -653,10 +658,10 @@ class Pv extends PvConfig {
         },
         dataType: 'jsonp'
       }).done(data => {
-        this.siteInfo = data.query;
+        this.siteInfo[project] = data.query;
 
         // cache for one week (TTL is in milliseconds)
-        simpleStorage.set(cacheKey, this.siteInfo, {TTL: 1000 * 60 * 60 * 24 * 7});
+        simpleStorage.set(cacheKey, this.siteInfo[project], {TTL: 1000 * 60 * 60 * 24 * 7});
 
         dfd.resolve(this.siteInfo);
       }).fail(data => {
@@ -665,6 +670,15 @@ class Pv extends PvConfig {
     }
 
     return dfd;
+  }
+
+  /**
+   * Helper to get siteinfo from this.siteInfo for given project, with or without .org
+   * @param {String} project - project name, with or without .org
+   * @returns {Object|undefined} site information if present
+   */
+  getSiteInfo(project) {
+    return this.siteInfo[project.replace(/\.org$/, '')];
   }
 
   /**
@@ -763,6 +777,85 @@ class Pv extends PvConfig {
   }
 
   /**
+   * Make mass requests to MediaWiki API
+   * The API normally limits to 500 pages, but gives you a 'continue' value
+   *   to finish iterating through the resource.
+   * @param {Object} params - parameters to pass to the API
+   * @param {String} project - project to query, e.g. en.wikipedia (.org is optional)
+   * @param {String} [continueKey] - the key to look in the continue hash, if present (e.g. cmcontinue for API:Categorymembers)
+   * @param {String|Function} [dataKey] - the key for the main chunk of data, in the query hash (e.g. categorymembers for API:Categorymembers)
+   *   If this is a function it is given the response data, and expected to return the data we want to concatentate.
+   * @param {Number} [limit] - max number of pages to fetch
+   * @return {Deferred} promise resolving with data
+   */
+  massApi(params, project, continueKey = 'continue', dataKey, limit = this.config.apiLimit) {
+    if (!/\.org$/.test(project)) project += '.org';
+
+    const dfd = $.Deferred();
+    let resolveData = {
+      pages: []
+    };
+
+    const makeRequest = continueValue => {
+      let requestData = Object.assign({
+        action: 'query',
+        format: 'json',
+        formatversion: '2'
+      }, params);
+
+      if (continueValue) requestData[continueKey] = continueValue;
+
+      const promise = $.ajax({
+        url: `https://${project}/w/api.php`,
+        jsonp: 'callback',
+        dataType: 'jsonp',
+        data: requestData
+      });
+
+      promise.done(data => {
+        // some failures come back as 200s, so we still resolve and let the local app handle it
+        if (data.error) return dfd.resolve(data);
+
+        let isFinished;
+
+        // allow custom function to parse the data we want, if provided
+        if (typeof dataKey === 'function') {
+          resolveData.pages = resolveData.pages.concat(dataKey(data.query));
+          isFinished = resolveData.pages.length >= limit;
+        } else {
+          // append new data to data from last request. We might want both 'pages' and dataKey
+          if (data.query.pages) {
+            resolveData.pages = resolveData.pages.concat(data.query.pages);
+          }
+          if (data.query[dataKey]) {
+            resolveData[dataKey] = (resolveData[dataKey] || []).concat(data.query[dataKey]);
+          }
+          // If pages is not the collection we want, it will be either an empty array or one entry with basic page info
+          //   depending on what API we're hitting. So resolveData[dataKey] will hit the limit
+          isFinished = resolveData.pages.length >= limit || resolveData[dataKey].length >= limit;
+        }
+
+        // make recursive call if needed, waiting 100ms
+        if (!isFinished &amp;&amp; data.continue &amp;&amp; data.continue[continueKey]) {
+          setTimeout(() => {
+            makeRequest(data.continue[continueKey]);
+          }, 100);
+        } else {
+          // indicate there were more entries than the limit
+          if (data.continue) resolveData.continue = true;
+          dfd.resolve(resolveData);
+        }
+      }).fail(data => {
+        dfd.reject(data);
+      });
+    };
+
+    makeRequest();
+
+    return dfd;
+  }
+
+  /**
    * Localize Number object with delimiters
    *
    * @param {Number} value - the Number, e.g. 1234567
@@ -814,7 +907,7 @@ class Pv extends PvConfig {
       let chunk = chunks[i].split('=');
 
       if (multiParam &amp;&amp; chunk[0] === multiParam) {
-        params[multiParam] = chunk[1].split('|').filter(param => !!param);
+        params[multiParam] = chunk[1].split('|').filter(param => !!param).unique();
       } else {
         params[chunk[0]] = chunk[1];
       }
@@ -1061,16 +1154,6 @@ class Pv extends PvConfig {
     /** prevent browser's default behaviour for any link with href="#" */
     $("a[href='#']").on('click', e => e.preventDefault());
 
-    /** language selector */
-    $('.lang-link').on('click', e => {
-      const expiryGMT = moment().add(this.config.cookieExpiry, 'days').toDate().toGMTString();
-      document.cookie = `TsIntuition_userlang=${$(e.target).data('lang')}; expires=${expiryGMT}; path=/`;
-
-      const expiryUnix = Math.floor(Date.now() / 1000) + (this.config.cookieExpiry * 24 * 60 * 60);
-      document.cookie = `TsIntuition_expiry=${expiryUnix}; expires=${expiryGMT}; path=/`;
-      location.reload();
-    });
-
     /** download listeners */
     $('.download-csv').on('click', this.exportCSV.bind(this));
     $('.download-json').on('click', this.exportJSON.bind(this));
@@ -1188,10 +1271,6 @@ class Pv extends PvConfig {
         this.daterangepicker.updateElement();
       }
     });
-  }
-
-  setThrottle() {
-    if (!this.isRequestCached()) simpleStorage.set('pageviews-throttle', true, {TTL: 90000});
   }
 
   showFatalErrors(errors) {
@@ -1403,7 +1482,7 @@ module.exports = Pv;
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Sep 19 2016 02:19:27 GMT-0400 (EDT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Sep 29 2016 16:45:10 GMT-0400 (EDT)
 </footer>
 
 <script> prettyPrint(); </script>
