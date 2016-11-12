@@ -1,68 +1,126 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>JSDoc: Class: RedirectViews</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Documentation Class: RedirectViews</title>
 
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+
 </head>
 
 <body>
 
-<div id="main">
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Documentation</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="LangViews.html">LangViews</a></li><li><a href="MassViews.html">MassViews</a></li><li><a href="MetaViews.html">MetaViews</a></li><li><a href="MixinBuilder.html">MixinBuilder</a></li><li><a href="PageViews.html">PageViews</a></li><li><a href="Pv.html">Pv</a></li><li><a href="PvConfig.html">PvConfig</a></li><li><a href="RedirectViews.html">RedirectViews</a></li><li><a href="SiteViews.html">SiteViews</a></li><li><a href="TopViews.html">TopViews</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#ChartHelpers">ChartHelpers</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#ListHelpers">ListHelpers</a></li><li><a href="global.html#siteMap">siteMap</a></li><li><a href="global.html#templates">templates</a></li><li><a href="global.html#undefinedassignOutputDataChartOpts">undefinedassignOutputDataChartOpts</a></li><li><a href="global.html#undefinedbuildChartData">undefinedbuildChartData</a></li><li><a href="global.html#undefineddestroyChart">undefineddestroyChart</a></li><li><a href="global.html#undefinedexportCSV">undefinedexportCSV</a></li><li><a href="global.html#undefinedexportJSON">undefinedexportJSON</a></li><li><a href="global.html#undefinedexportPNG">undefinedexportPNG</a></li><li><a href="global.html#undefinedfillInZeros">undefinedfillInZeros</a></li><li><a href="global.html#undefinedgetApiUrl">undefinedgetApiUrl</a></li><li><a href="global.html#undefinedgetCacheKey">undefinedgetCacheKey</a></li><li><a href="global.html#undefinedgetPageViewsData">undefinedgetPageViewsData</a></li><li><a href="global.html#undefinedgetPageviewsURL">undefinedgetPageviewsURL</a></li><li><a href="global.html#undefinedgetPermaLink">undefinedgetPermaLink</a></li><li><a href="global.html#undefinedgetState">undefinedgetState</a></li><li><a href="global.html#undefinedisLogarithmic">undefinedisLogarithmic</a></li><li><a href="global.html#undefinedisLogarithmicCapable">undefinedisLogarithmicCapable</a></li><li><a href="global.html#undefinedisPageviews">undefinedisPageviews</a></li><li><a href="global.html#undefinedisRequestCached">undefinedisRequestCached</a></li><li><a href="global.html#undefinedisUniqueDevices">undefinedisUniqueDevices</a></li><li><a href="global.html#undefinedprintChart">undefinedprintChart</a></li><li><a href="global.html#undefinedrenderData">undefinedrenderData</a></li><li><a href="global.html#undefinedresetView">undefinedresetView</a></li><li><a href="global.html#undefinedsetChartPointDetectionRadius">undefinedsetChartPointDetectionRadius</a></li><li><a href="global.html#undefinedsetColorsAndLogValues">undefinedsetColorsAndLogValues</a></li><li><a href="global.html#undefinedsetInitialChartType">undefinedsetInitialChartType</a></li><li><a href="global.html#undefinedsetupDateRangeSelector">undefinedsetupDateRangeSelector</a></li><li><a href="global.html#undefinedshouldBeLogarithmic">undefinedshouldBeLogarithmic</a></li><li><a href="global.html#undefinedshowErrors">undefinedshowErrors</a></li><li><a href="global.html#undefinedtoggleView">undefinedtoggleView</a></li><li><a href="global.html#undefinedupdateChart">undefinedupdateChart</a></li><li><a href="global.html#undefinedupdateProgressBar">undefinedupdateProgressBar</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
 
-    <h1 class="page-title">Class: RedirectViews</h1>
-
-    
-
+</div>
+</div>
 
 
+<div class="container" id="toc-content">
+<div class="row">
 
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Class: RedirectViews</h1>
 <section>
 
 <header>
     
-        <h2>RedirectViews</h2>
+        <h2>
+        RedirectViews
+        </h2>
         
             <div class="class-description"><p>Main RedirectViews class</p></div>
         
     
 </header>
 
+
 <article>
     <div class="container-overview">
     
         
+<hr>
+<dt>
+    <h4 class="name" id="RedirectViews"><span class="type-signature"></span>new RedirectViews()</h4>
+    
+    
+</dt>
+<dd>
 
     
-    <h2>Constructor</h2>
+    <div class="description">
+        <p>set instance variables and boot the app via pv.constructor</p>
+    </div>
     
 
-    <h4 class="name" id="RedirectViews"><span class="type-signature"></span>new RedirectViews<span class="signature">()</span><span class="type-signature"></span></h4>
+    
 
     
 
+    
+    
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -72,50 +130,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line20">line 20</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-
+    
+</dd>
 
     
     </div>
@@ -126,31 +176,39 @@
 
     
 
-     
+    
 
     
 
     
         <h3 class="subsection-title">Members</h3>
 
-        
+        <dl>
             
-<h4 class="name" id="baseProject"><span class="type-signature"></span>baseProject<span class="type-signature"></span></h4>
+<hr>
+<dt class="name" id="baseProject">
+    <h4 id="baseProject"><span class="type-signature"></span>baseProject<span class="type-signature"></span></h4>
 
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Get the base project name (without language and the .org)</p>
+    </div>
+    
 
+    
 
-
-<div class="description">
-    <p>Get the base project name (without language and the .org)</p>
-</div>
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -160,50 +218,43 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line215">line 215</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
+    
+</dd>
 
         
             
-<h4 class="name" id="outputData"><span class="type-signature"></span>outputData<span class="type-signature"></span></h4>
+<hr>
+<dt class="name" id="outputData">
+    <h4 id="outputData"><span class="type-signature"></span>outputData<span class="type-signature"></span></h4>
 
-
-
-
-<div class="description">
-    <p><code>datasets</code> structure:</p>
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p><code>datasets</code> structure:</p>
 <p>[{
   title: page,
   items: [
@@ -237,15 +288,20 @@
   average: 2,
   datesWithoutData: ['2016-05-16T00:00:00-00:00']
 }</p>
-</div>
+    </div>
+    
 
+    
 
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -255,55 +311,57 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line134">line 134</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
+    
+</dd>
 
         
             
-<h4 class="name" id="typeahead"><span class="type-signature"></span>typeahead<span class="type-signature"></span></h4>
+<hr>
+<dt class="name" id="typeahead">
+    <h4 id="typeahead"><span class="type-signature"></span>typeahead<span class="type-signature"></span></h4>
 
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Get instance of Typeahead plugin</p>
+    </div>
+    
 
+    
 
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -313,76 +371,70 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line222">line 222</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
+</dd>
 
-
-
-
-        
+        </dl>
     
 
     
         <h3 class="subsection-title">Methods</h3>
 
-        
+        <dl>
             
+<hr>
+<dt>
+    <h4 class="name" id="assignDefaults"><span class="type-signature"></span>assignDefaults()</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="assignDefaults"><span class="type-signature"></span>assignDefaults<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Copy necessary default values to class instance.
+    <div class="description">
+        <p>Copy necessary default values to class instance.
 Called when the view is reset.</p>
-</div>
+    </div>
+    
 
+    
 
+    
 
+    
+    
 
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -392,101 +444,70 @@ Called when the view is reset.</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line79">line 79</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="buildMotherDataset"><span class="type-signature"></span>buildMotherDataset(label, link, datasets)</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="buildMotherDataset"><span class="type-signature"></span>buildMotherDataset<span class="signature">(label, link, datasets)</span><span class="type-signature"> &rarr; {object}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Build our mother data set, from which we can draw a chart,
+    <div class="description">
+        <p>Build our mother data set, from which we can draw a chart,
   render a list of data, whatever our heart desires :)</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
+    </div>
     
 
-<table class="params">
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -517,6 +538,7 @@ Called when the view is reset.</p>
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -538,6 +560,7 @@ Called when the view is reset.</p>
             
                 
 <span class="param-type">string</span>
+
 
 
             
@@ -563,6 +586,7 @@ Called when the view is reset.</p>
 <span class="param-type">array</span>
 
 
+
             
             </td>
 
@@ -577,12 +601,17 @@ Called when the view is reset.</p>
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -592,51 +621,42 @@ Called when the view is reset.</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line93">line 93</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>mother data set, also stored in this.outputData</p>
 </div>
@@ -652,42 +672,49 @@ Called when the view is reset.</p>
 <span class="param-type">object</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="exportCSV"><span class="type-signature"></span>exportCSV()</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="exportCSV"><span class="type-signature"></span>exportCSV<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Exports current lang data to CSV format and loads it in a new tab
+    <div class="description">
+        <p>Exports current lang data to CSV format and loads it in a new tab
 With the prepended data:text/csv this should cause the browser to download the data</p>
-</div>
+    </div>
+    
 
+    
 
+    
 
+    
+    
 
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -697,101 +724,75 @@ With the prepended data:text/csv this should cause the browser to download the d
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line653">line 653</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>CSV content</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">string</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getExportFilename"><span class="type-signature"></span>getExportFilename()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get informative filename without extension to be used for export options</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="getExportFilename"><span class="type-signature"></span>getExportFilename<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    <p>Get informative filename without extension to be used for export options</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -801,51 +802,42 @@ With the prepended data:text/csv this should cause the browser to download the d
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line231">line 231</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>filename without an extension</p>
 </div>
@@ -861,41 +853,48 @@ With the prepended data:text/csv this should cause the browser to download the d
 <span class="param-type">string</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getExportFilename"><span class="type-signature"></span>getExportFilename()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get informative filename without extension to be used for export options</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="getExportFilename"><span class="type-signature"></span>getExportFilename<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    <p>Get informative filename without extension to be used for export options</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -905,51 +904,42 @@ With the prepended data:text/csv this should cause the browser to download the d
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line674">line 674</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>filename without an extension</p>
 </div>
@@ -965,41 +955,43 @@ With the prepended data:text/csv this should cause the browser to download the d
 <span class="param-type">string</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getPageViewsData"><span class="type-signature"></span>getPageViewsData(redirectData)</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="getPageViewsData"><span class="type-signature"></span>getPageViewsData<span class="signature">(redirectData)</span><span class="type-signature"> &rarr; {Deferred}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Loop through given pages and query the pageviews API for each
+    <div class="description">
+        <p>Loop through given pages and query the pageviews API for each
   Also updates this.outputData with result</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
+    </div>
     
 
-<table class="params">
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -1030,6 +1022,7 @@ With the prepended data:text/csv this should cause the browser to download the d
 <span class="param-type">Array</span>
 
 
+
             
             </td>
 
@@ -1044,12 +1037,17 @@ With the prepended data:text/csv this should cause the browser to download the d
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1059,51 +1057,42 @@ With the prepended data:text/csv this should cause the browser to download the d
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line354">line 354</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <ul>
 <li>Promise resolving with data ready to be rendered to view</li>
@@ -1121,40 +1110,42 @@ With the prepended data:text/csv this should cause the browser to download the d
 <span class="param-type">Deferred</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getParams"><span class="type-signature"></span>getParams( [forCacheKey])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get all user-inputted parameters</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="getParams"><span class="type-signature"></span>getParams<span class="signature">(forCacheKey<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Get all user-inputted parameters</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -1164,9 +1155,11 @@ With the prepended data:text/csv this should cause the browser to download the d
         <th>Type</th>
 
         
-        <th>Attributes</th>
+        <th>Argument</th>
         
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -1187,6 +1180,7 @@ With the prepended data:text/csv this should cause the browser to download the d
 <span class="param-type">boolean</span>
 
 
+
             
             </td>
 
@@ -1203,6 +1197,12 @@ With the prepended data:text/csv this should cause the browser to download the d
             
 
             
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
 
             <td class="description last"><p>whether or not to include the page name, and exclude sort and direction
   in the returned object. This is for the purposes of generating a unique cache key for params affecting the API queries</p></td>
@@ -1212,12 +1212,17 @@ With the prepended data:text/csv this should cause the browser to download the d
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1227,51 +1232,42 @@ With the prepended data:text/csv this should cause the browser to download the d
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line242">line 242</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>project, platform, agent, etc.</p>
 </div>
@@ -1287,40 +1283,42 @@ With the prepended data:text/csv this should cause the browser to download the d
 <span class="param-type">Object</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getRedirects"><span class="type-signature"></span>getRedirects(pageName)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get all redirects of a page</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="getRedirects"><span class="type-signature"></span>getRedirects<span class="signature">(pageName)</span><span class="type-signature"> &rarr; {Deferred}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Get all redirects of a page</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -1351,6 +1349,7 @@ With the prepended data:text/csv this should cause the browser to download the d
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -1365,12 +1364,17 @@ With the prepended data:text/csv this should cause the browser to download the d
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1380,51 +1384,42 @@ With the prepended data:text/csv this should cause the browser to download the d
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line438">line 438</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <ul>
 <li>Promise resolving with redirect data</li>
@@ -1442,40 +1437,42 @@ With the prepended data:text/csv this should cause the browser to download the d
 <span class="param-type">Deferred</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getSortProperty"><span class="type-signature"></span>getSortProperty(item, type)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get value of given langview entry for the purposes of column sorting</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="getSortProperty"><span class="type-signature"></span>getSortProperty<span class="signature">(item, type)</span><span class="type-signature"> &rarr; {String|Number}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Get value of given langview entry for the purposes of column sorting</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -1506,6 +1503,7 @@ With the prepended data:text/csv this should cause the browser to download the d
 <span class="param-type">object</span>
 
 
+
             
             </td>
 
@@ -1529,6 +1527,7 @@ With the prepended data:text/csv this should cause the browser to download the d
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -1543,12 +1542,17 @@ With the prepended data:text/csv this should cause the browser to download the d
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1558,51 +1562,42 @@ With the prepended data:text/csv this should cause the browser to download the d
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line337">line 337</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <ul>
 <li>value</li>
@@ -1623,42 +1618,49 @@ With the prepended data:text/csv this should cause the browser to download the d
 <span class="param-type">Number</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="initialize"><span class="type-signature"></span>initialize()</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="initialize"><span class="type-signature"></span>initialize<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Initialize the application.
+    <div class="description">
+        <p>Initialize the application.
 Called in <code>pv.js</code> after translations have loaded</p>
-</div>
+    </div>
+    
 
+    
 
+    
 
+    
+    
 
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1668,102 +1670,76 @@ Called in <code>pv.js</code> after translations have loaded</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line31">line 31</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="popParams"><span class="type-signature"></span>popParams()</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="popParams"><span class="type-signature"></span>popParams<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Parses the URL query string and sets all the inputs accordingly
+    <div class="description">
+        <p>Parses the URL query string and sets all the inputs accordingly
 Should only be called on initial page load, until we decide to support pop states (probably never)</p>
-</div>
+    </div>
+    
 
+    
 
+    
 
+    
+    
 
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1773,102 +1749,76 @@ Should only be called on initial page load, until we decide to support pop state
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line480">line 480</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="processInput"><span class="type-signature"></span>processInput()</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="processInput"><span class="type-signature"></span>processInput<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Process the redirectviews for the article and options entered
+    <div class="description">
+        <p>Process the redirectviews for the article and options entered
 Called when submitting the form</p>
-</div>
+    </div>
+    
 
+    
 
+    
 
+    
+    
 
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1878,55 +1828,42 @@ Called when submitting the form</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line563">line 563</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -1938,40 +1875,42 @@ Called when submitting the form</p>
 <span class="param-type">null</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="pushParams"><span class="type-signature"></span>pushParams(clear)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Push relevant class properties to the query string</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="pushParams"><span class="type-signature"></span>pushParams<span class="signature">(clear)</span><span class="type-signature"> &rarr; {null}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Push relevant class properties to the query string</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -1982,6 +1921,8 @@ Called when submitting the form</p>
 
         
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -2002,11 +1943,18 @@ Called when submitting the form</p>
 <span class="param-type">Boolean</span>
 
 
+
             
             </td>
 
             
 
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
             
 
             <td class="description last"><p>wheter to clear the query string entirely</p></td>
@@ -2016,12 +1964,17 @@ Called when submitting the form</p>
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2031,55 +1984,42 @@ Called when submitting the form</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line281">line 281</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
+    
+    <h5>Returns:</h5>
+    
+            
 
 
 <dl>
@@ -2091,41 +2031,48 @@ Called when submitting the form</p>
 <span class="param-type">null</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="renderData"><span class="type-signature"></span>renderData()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Render list of redirectviews into view</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="renderData"><span class="type-signature"></span>renderData<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    <p>Render list of redirectviews into view</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2135,101 +2082,70 @@ Called when submitting the form</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line297">line 297</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setState"><span class="type-signature"></span>setState(state)</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="setState"><span class="type-signature"></span>setState<span class="signature">(state)</span><span class="type-signature"> &rarr; {null}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Helper to set a CSS class on the <code>main</code> node,
+    <div class="description">
+        <p>Helper to set a CSS class on the <code>main</code> node,
   styling the document based on a 'state'</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
+    </div>
     
 
-<table class="params">
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -2260,6 +2176,7 @@ Called when submitting the form</p>
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -2275,12 +2192,17 @@ Called when submitting the form</p>
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2290,101 +2212,75 @@ Called when submitting the form</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line527">line 527</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setupListeners"><span class="type-signature"></span>setupListeners()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Add general event listeners</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="setupListeners"><span class="type-signature"></span>setupListeners<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    <p>Add general event listeners</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2394,101 +2290,75 @@ Called when submitting the form</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line47">line 47</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setupSourceInput"><span class="type-signature"></span>setupSourceInput()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Setup typeahead on the article input, killing the prevous instance if present</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="setupSourceInput"><span class="type-signature"></span>setupSourceInput<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    <p>Setup typeahead on the article input, killing the prevous instance if present</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2498,102 +2368,76 @@ Called when submitting the form</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line611">line 611</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="validateProject"><span class="type-signature"></span>validateProject()</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="validateProject"><span class="type-signature"></span>validateProject<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Calls parent setupProjectInput and updates the view if validations passed
+    <div class="description">
+        <p>Calls parent setupProjectInput and updates the view if validations passed
   reverting to the old value if the new one is invalid</p>
-</div>
+    </div>
+    
 
+    
 
+    
 
+    
+    
 
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2603,74 +2447,44 @@ Called when submitting the form</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="redirectviews_redirectviews.js.html">redirectviews/redirectviews.js</a>, <a href="redirectviews_redirectviews.js.html#line639">line 639</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
 
-        
+    
+
+    
+
+    
+</dd>
+
+        </dl>
     
 
     
@@ -2683,19 +2497,132 @@ Called when submitting the form</p>
 
 
 
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
 </div>
 
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="LangViews.html">LangViews</a></li><li><a href="MassViews.html">MassViews</a></li><li><a href="MetaViews.html">MetaViews</a></li><li><a href="PageViews.html">PageViews</a></li><li><a href="Pv.html">Pv</a></li><li><a href="PvConfig.html">PvConfig</a></li><li><a href="RedirectViews.html">RedirectViews</a></li><li><a href="SiteViews.html">SiteViews</a></li><li><a href="TopViews.html">TopViews</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ChartHelpers">ChartHelpers</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#ListHelpers">ListHelpers</a></li><li><a href="global.html#siteMap">siteMap</a></li><li><a href="global.html#templates">templates</a></li></ul>
-</nav>
 
-<br class="clear">
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Sep 29 2016 16:45:11 GMT-0400 (EDT)
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a>
+	
+		on November 12th 2016, 1:58:24 pm
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
 </footer>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
 </body>
 </html>

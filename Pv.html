@@ -1,68 +1,176 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>JSDoc: Class: Pv</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Documentation Class: Pv</title>
 
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+
 </head>
 
 <body>
 
-<div id="main">
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Documentation</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="LangViews.html">LangViews</a></li><li><a href="MassViews.html">MassViews</a></li><li><a href="MetaViews.html">MetaViews</a></li><li><a href="MixinBuilder.html">MixinBuilder</a></li><li><a href="PageViews.html">PageViews</a></li><li><a href="Pv.html">Pv</a></li><li><a href="PvConfig.html">PvConfig</a></li><li><a href="RedirectViews.html">RedirectViews</a></li><li><a href="SiteViews.html">SiteViews</a></li><li><a href="TopViews.html">TopViews</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html#ChartHelpers">ChartHelpers</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#ListHelpers">ListHelpers</a></li><li><a href="global.html#siteMap">siteMap</a></li><li><a href="global.html#templates">templates</a></li><li><a href="global.html#undefinedassignOutputDataChartOpts">undefinedassignOutputDataChartOpts</a></li><li><a href="global.html#undefinedbuildChartData">undefinedbuildChartData</a></li><li><a href="global.html#undefineddestroyChart">undefineddestroyChart</a></li><li><a href="global.html#undefinedexportCSV">undefinedexportCSV</a></li><li><a href="global.html#undefinedexportJSON">undefinedexportJSON</a></li><li><a href="global.html#undefinedexportPNG">undefinedexportPNG</a></li><li><a href="global.html#undefinedfillInZeros">undefinedfillInZeros</a></li><li><a href="global.html#undefinedgetApiUrl">undefinedgetApiUrl</a></li><li><a href="global.html#undefinedgetCacheKey">undefinedgetCacheKey</a></li><li><a href="global.html#undefinedgetPageViewsData">undefinedgetPageViewsData</a></li><li><a href="global.html#undefinedgetPageviewsURL">undefinedgetPageviewsURL</a></li><li><a href="global.html#undefinedgetPermaLink">undefinedgetPermaLink</a></li><li><a href="global.html#undefinedgetState">undefinedgetState</a></li><li><a href="global.html#undefinedisLogarithmic">undefinedisLogarithmic</a></li><li><a href="global.html#undefinedisLogarithmicCapable">undefinedisLogarithmicCapable</a></li><li><a href="global.html#undefinedisPageviews">undefinedisPageviews</a></li><li><a href="global.html#undefinedisRequestCached">undefinedisRequestCached</a></li><li><a href="global.html#undefinedisUniqueDevices">undefinedisUniqueDevices</a></li><li><a href="global.html#undefinedprintChart">undefinedprintChart</a></li><li><a href="global.html#undefinedrenderData">undefinedrenderData</a></li><li><a href="global.html#undefinedresetView">undefinedresetView</a></li><li><a href="global.html#undefinedsetChartPointDetectionRadius">undefinedsetChartPointDetectionRadius</a></li><li><a href="global.html#undefinedsetColorsAndLogValues">undefinedsetColorsAndLogValues</a></li><li><a href="global.html#undefinedsetInitialChartType">undefinedsetInitialChartType</a></li><li><a href="global.html#undefinedsetupDateRangeSelector">undefinedsetupDateRangeSelector</a></li><li><a href="global.html#undefinedshouldBeLogarithmic">undefinedshouldBeLogarithmic</a></li><li><a href="global.html#undefinedshowErrors">undefinedshowErrors</a></li><li><a href="global.html#undefinedtoggleView">undefinedtoggleView</a></li><li><a href="global.html#undefinedupdateChart">undefinedupdateChart</a></li><li><a href="global.html#undefinedupdateProgressBar">undefinedupdateProgressBar</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
 
-    <h1 class="page-title">Class: Pv</h1>
-
-    
-
+</div>
+</div>
 
 
+<div class="container" id="toc-content">
+<div class="row">
 
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	<h1 class="page-title">Class: Pv</h1>
 <section>
 
 <header>
     
-        <h2>Pv</h2>
+        <h2>
+        Pv
+        </h2>
         
             <div class="class-description"><p>Pv class, contains code amongst all apps (Pageviews, Topviews, Langviews, Siteviews, Massviews, Redirect Views)</p></div>
         
     
 </header>
 
+
 <article>
     <div class="container-overview">
     
         
+<hr>
+<dt>
+    <h4 class="name" id="Pv"><span class="type-signature"></span>new Pv(appConfig)</h4>
+    
+    
+</dt>
+<dd>
 
     
-    <h2>Constructor</h2>
+    <div class="description">
+        <p>Main constructor for each app, giving way to the parent constructor in list_helpers or chart_helpers</p>
+    </div>
     
 
-    <h4 class="name" id="Pv"><span class="type-signature"></span>new Pv<span class="signature">()</span><span class="type-signature"></span></h4>
+    
 
     
 
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>appConfig</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
 
 
 
+            
+            </td>
 
+            
 
+            
 
+            <td class="description last"><p>as defined in the app's config.js</p></td>
+        </tr>
 
+    
+    </tbody>
+</table>
 
+    
 
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -72,50 +180,42 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line13">line 13</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-
+    
+</dd>
 
     
     </div>
@@ -126,31 +226,39 @@
 
     
 
-     
+    
 
     
 
     
         <h3 class="subsection-title">Members</h3>
 
-        
+        <dl>
             
-<h4 class="name" id=".multilangProjects"><span class="type-signature">(static) </span>multilangProjects<span class="type-signature"></span></h4>
+<hr>
+<dt class="name" id=".multilangProjects">
+    <h4 id=".multilangProjects"><span class="type-signature">&lt;static> </span>multilangProjects<span class="type-signature"></span></h4>
 
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>List of valid multilingual projects</p>
+    </div>
+    
 
+    
 
-
-<div class="description">
-    <p>List of valid multilingual projects</p>
-</div>
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -160,59 +268,57 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line739">line 739</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
+    
+</dd>
 
         
             
-<h4 class="name" id="colorsStyleEl"><span class="type-signature"></span>colorsStyleEl<span class="type-signature"></span></h4>
+<hr>
+<dt class="name" id="colorsStyleEl">
+    <h4 id="colorsStyleEl"><span class="type-signature"></span>colorsStyleEl<span class="type-signature"></span></h4>
 
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>create new stylesheet</p>
+    </div>
+    
 
+    
 
-
-<div class="description">
-    <p>create new stylesheet</p>
-</div>
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -222,59 +328,57 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line1108">line 1108</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
+    
+</dd>
 
         
             
-<h4 class="name" id="dateFormat"><span class="type-signature"></span>dateFormat<span class="type-signature"></span></h4>
+<hr>
+<dt class="name" id="dateFormat">
+    <h4 id="dateFormat"><span class="type-signature"></span>dateFormat<span class="type-signature"></span></h4>
 
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Get date format to use based on settings</p>
+    </div>
+    
 
+    
 
-
-<div class="description">
-    <p>Get date format to use based on settings</p>
-</div>
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -284,59 +388,57 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line184">line 184</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
+    
+</dd>
 
         
             
-<h4 class="name" id="daterangepicker"><span class="type-signature"></span>daterangepicker<span class="type-signature"></span></h4>
+<hr>
+<dt class="name" id="daterangepicker">
+    <h4 id="daterangepicker"><span class="type-signature"></span>daterangepicker<span class="type-signature"></span></h4>
 
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Get the daterangepicker instance. Plain and simple.</p>
+    </div>
+    
 
+    
 
-
-<div class="description">
-    <p>Get the daterangepicker instance. Plain and simple.</p>
-</div>
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -346,72 +448,71 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line196">line 196</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
+    
+</dd>
 
         
             
-<h4 class="name" id="processStart"><span class="type-signature"></span>processStart<span class="type-signature"> :null|Date</span></h4>
+<hr>
+<dt class="name" id="processStart">
+    <h4 id="processStart"><span class="type-signature"></span>processStart<span class="type-signature"> :null|Date</span></h4>
 
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>tracking of elapsed time</p>
+    </div>
+    
 
-
-
-<div class="description">
-    <p>tracking of elapsed time</p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
 <span class="param-type">null</span>
 |
 
 <span class="param-type">Date</span>
 
 
-        </li>
-    </ul>
 
+            </li>
+        </ul>
+    
 
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -421,59 +522,57 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line36">line 36</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
+    
+</dd>
 
         
             
-<h4 class="name" id="project"><span class="type-signature"></span>project<span class="type-signature"></span></h4>
+<hr>
+<dt class="name" id="project">
+    <h4 id="project"><span class="type-signature"></span>project<span class="type-signature"></span></h4>
 
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Get the project name (without the .org)</p>
+    </div>
+    
 
+    
 
-
-<div class="description">
-    <p>Get the project name (without the .org)</p>
-</div>
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -483,74 +582,63 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line345">line 345</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
+</dd>
 
-
-
-
-        
+        </dl>
     
 
     
         <h3 class="subsection-title">Methods</h3>
 
-        
+        <dl>
             
+<hr>
+<dt>
+    <h4 class="name" id="addInvalidParamNotice"><span class="type-signature"></span>addInvalidParamNotice(param)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Add site notice for invalid parameter</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="addInvalidParamNotice"><span class="type-signature"></span>addInvalidParamNotice<span class="signature">(param)</span><span class="type-signature"> &rarr; {null}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Add site notice for invalid parameter</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -581,6 +669,7 @@
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -595,12 +684,17 @@
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -610,258 +704,75 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line107">line 107</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="clearMessages"><span class="type-signature"></span>clearMessages()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Clear inline messages used to show non-critical errors</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="addSiteNotice"><span class="type-signature"></span>addSiteNotice<span class="signature">(level, message, title<span class="signature-attributes">opt</span>, dismissable<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {null}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Add a site notice (Bootstrap alert)</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
+    
     
 
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
     
-
-        <tr>
-            
-                <td class="name"><code>level</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>one of 'success', 'info', 'warning' or 'danger'</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>message</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>message to show</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>title</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>will appear in bold and in front of the message</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>dismissable</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Boolean</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>whether or not to add a X
-  that allows the user to dismiss the notice</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -871,277 +782,69 @@
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line81">line 81</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="dbName"><span class="type-signature"></span>dbName(project)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get the database name of the given projet</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="downloadData"><span class="type-signature"></span>downloadData<span class="signature">(data, extension)</span><span class="type-signature"> &rarr; {null}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Force download of given data, or open in a new tab if HTML5 <a> download attribute is not supported</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
+    
+        <h5>Parameters:</h5>
         
 
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>data</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Raw data prepended with data type, e.g. &quot;data:text/csv;charset=utf-8,my data...&quot;</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>extension</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the file extension to use</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line206">line 206</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>Nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="fetchSiteInfo"><span class="type-signature"></span>fetchSiteInfo<span class="signature">(project)</span><span class="type-signature"> &rarr; {Deferred}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Get general information about a project, such as namespaces, title of the main page, etc.
-Data returned by the api is also stored in this.siteInfo</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -1172,6 +875,312 @@ Data returned by the api is also stored in this.siteInfo</p>
 <span class="param-type">String</span>
 
 
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>with or without .org</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>database name</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="downloadData"><span class="type-signature"></span>downloadData(data, extension)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Force download of given data, or open in a new tab if HTML5 <a> download attribute is not supported</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Raw data prepended with data type, e.g. &quot;data:text/csv;charset=utf-8,my data...&quot;</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>extension</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the file extension to use</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="fetchSiteInfo"><span class="type-signature"></span>fetchSiteInfo(project)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get general information about a project, such as namespaces, title of the main page, etc.
+Data returned by the api is also stored in this.siteInfo</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>project</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
             
             </td>
 
@@ -1186,12 +1195,17 @@ Data returned by the api is also stored in this.siteInfo</p>
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1201,51 +1215,42 @@ Data returned by the api is also stored in this.siteInfo</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line610">line 610</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>promise resolving with siteinfo,
   along with any other cached siteinfo for other projects</p>
@@ -1262,41 +1267,48 @@ Data returned by the api is also stored in this.siteInfo</p>
 <span class="param-type">Deferred</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="fillInSettings"><span class="type-signature"></span>fillInSettings()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Fill in values within settings modal with what's in the session object</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="fillInSettings"><span class="type-signature"></span>fillInSettings<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    <p>Fill in values within settings modal with what's in the session object</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1306,101 +1318,75 @@ Data returned by the api is also stored in this.siteInfo</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line229">line 229</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="focusSelect2"><span class="type-signature"></span>focusSelect2()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Add focus to Select2 input field</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="focusSelect2"><span class="type-signature"></span>focusSelect2<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    <p>Add focus to Select2 input field</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1410,100 +1396,69 @@ Data returned by the api is also stored in this.siteInfo</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line243">line 243</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="formatNumber"><span class="type-signature"></span>formatNumber(num)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Format number based on current settings, e.g. localize with comma delimeters</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="formatNumber"><span class="type-signature"></span>formatNumber<span class="signature">(num)</span><span class="type-signature"> &rarr; {string}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Format number based on current settings, e.g. localize with comma delimeters</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -1537,6 +1492,7 @@ Data returned by the api is also stored in this.siteInfo</p>
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -1551,12 +1507,17 @@ Data returned by the api is also stored in this.siteInfo</p>
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1566,51 +1527,42 @@ Data returned by the api is also stored in this.siteInfo</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line253">line 253</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>formatted number</p>
 </div>
@@ -1626,40 +1578,42 @@ Data returned by the api is also stored in this.siteInfo</p>
 <span class="param-type">string</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="formatYAxisNumber"><span class="type-signature"></span>formatYAxisNumber(num)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>show every other number in the y-axis, called from PvConfig</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="getBugReportURL"><span class="type-signature"></span>getBugReportURL<span class="signature">(phabPaste<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Get URL to file a report on Meta, preloaded with permalink</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -1669,7 +1623,162 @@ Data returned by the api is also stored in this.siteInfo</p>
         <th>Type</th>
 
         
-        <th>Attributes</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>num</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>numerical value</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>formatted number or null if an even number</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getBugReportURL"><span class="type-signature"></span>getBugReportURL( [phabPaste] [, titleOverride])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get URL to file a report on Meta, preloaded with permalink</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
         
 
         
@@ -1690,6 +1799,7 @@ Data returned by the api is also stored in this.siteInfo</p>
             
                 
 <span class="param-type">String</span>
+
 
 
             
@@ -1713,15 +1823,54 @@ Data returned by the api is also stored in this.siteInfo</p>
         </tr>
 
     
+
+        <tr>
+            
+                <td class="name"><code>titleOverride</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>goes in the title input field of the wiki editing interface</p></td>
+        </tr>
+
+    
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1731,51 +1880,42 @@ Data returned by the api is also stored in this.siteInfo</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line592">line 592</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>URL</p>
 </div>
@@ -1791,40 +1931,42 @@ Data returned by the api is also stored in this.siteInfo</p>
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getDateHeadings"><span class="type-signature"></span>getDateHeadings(localized)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Gets the date headings as strings - i18n compliant</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="getDateHeadings"><span class="type-signature"></span>getDateHeadings<span class="signature">(localized)</span><span class="type-signature"> &rarr; {Array}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Gets the date headings as strings - i18n compliant</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -1835,6 +1977,8 @@ Data returned by the api is also stored in this.siteInfo</p>
 
         
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -1855,11 +1999,18 @@ Data returned by the api is also stored in this.siteInfo</p>
 <span class="param-type">boolean</span>
 
 
+
             
             </td>
 
             
 
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
             
 
             <td class="description last"><p>whether the dates should be localized per browser language</p></td>
@@ -1869,12 +2020,17 @@ Data returned by the api is also stored in this.siteInfo</p>
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -1884,51 +2040,42 @@ Data returned by the api is also stored in this.siteInfo</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line275">line 275</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>the date headings as strings</p>
 </div>
@@ -1944,41 +2091,43 @@ Data returned by the api is also stored in this.siteInfo</p>
 <span class="param-type">Array</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getExpandedPageURL"><span class="type-signature"></span>getExpandedPageURL(page)</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="getExpandedPageURL"><span class="type-signature"></span>getExpandedPageURL<span class="signature">(page)</span><span class="type-signature"> &rarr; {string}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Get the explanded wiki URL given the page name
+    <div class="description">
+        <p>Get the explanded wiki URL given the page name
 This should be used instead of getPageURL when you want to chain query string parameters</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
+    </div>
     
 
-<table class="params">
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -2009,6 +2158,7 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -2023,12 +2173,17 @@ This should be used instead of getPageURL when you want to chain query string pa
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2038,51 +2193,42 @@ This should be used instead of getPageURL when you want to chain query string pa
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line296">line 296</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>URL for the page</p>
 </div>
@@ -2098,41 +2244,48 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">string</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getExportFilename"><span class="type-signature"></span>getExportFilename()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get informative filename without extension to be used for export options</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="getExportFilename"><span class="type-signature"></span>getExportFilename<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    <p>Get informative filename without extension to be used for export options</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2142,51 +2295,42 @@ This should be used instead of getPageURL when you want to chain query string pa
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line304">line 304</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>filename without an extension</p>
 </div>
@@ -2202,40 +2346,42 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">string</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getFromLocalStorage"><span class="type-signature"></span>getFromLocalStorage(key)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get a value from localStorage, using a temporary storage if localStorage is not supported</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="getFromLocalStorage"><span class="type-signature"></span>getFromLocalStorage<span class="signature">(key)</span><span class="type-signature"> &rarr; {Mixed}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Get a value from localStorage, using a temporary storage if localStorage is not supported</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -2266,6 +2412,7 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -2280,12 +2427,17 @@ This should be used instead of getPageURL when you want to chain query string pa
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2295,51 +2447,42 @@ This should be used instead of getPageURL when you want to chain query string pa
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line578">line 578</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>stored value</p>
 </div>
@@ -2355,40 +2498,42 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">Mixed</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getHistoryLink"><span class="type-signature"></span>getHistoryLink(page, content)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get full link to page history for given page and project</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="getPageLink"><span class="type-signature"></span>getPageLink<span class="signature">(page, project<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Get a full link for the given page and project</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -2397,8 +2542,6 @@ This should be used instead of getPageURL when you want to chain query string pa
 
         <th>Type</th>
 
-        
-        <th>Attributes</th>
         
 
         
@@ -2419,6 +2562,440 @@ This should be used instead of getPageURL when you want to chain query string pa
             
                 
 <span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>page to link to</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>content</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>what to put as the link text</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>HTML markup</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getLocaleDateString"><span class="type-signature"></span>getLocaleDateString()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>get date format for the browser's locale</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>format to be passed to moment.format()</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getPageInfo"><span class="type-signature"></span>getPageInfo(pages)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get basic info on given pages, including the normalized page names.
+E.g. masculine versus feminine namespaces on dewiki</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>pages</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">array</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>array of page names</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>promise with data fetched from API</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Deferred</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getPageLink"><span class="type-signature"></span>getPageLink(page [, project])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get a full link for the given page and project</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>page</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
 
 
             
@@ -2452,6 +3029,7 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -2476,12 +3054,17 @@ This should be used instead of getPageURL when you want to chain query string pa
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2491,51 +3074,42 @@ This should be used instead of getPageURL when you want to chain query string pa
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line316">line 316</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>HTML markup</p>
 </div>
@@ -2551,40 +3125,42 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">string</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getPageURL"><span class="type-signature"></span>getPageURL(page [, project])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get the wiki URL given the page name</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="getPageURL"><span class="type-signature"></span>getPageURL<span class="signature">(page)</span><span class="type-signature"> &rarr; {string}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Get the wiki URL given the page name</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -2593,6 +3169,8 @@ This should be used instead of getPageURL when you want to chain query string pa
 
         <th>Type</th>
 
+        
+        <th>Argument</th>
         
 
         
@@ -2615,9 +3193,18 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -2626,15 +3213,54 @@ This should be used instead of getPageURL when you want to chain query string pa
         </tr>
 
     
+
+        <tr>
+            
+                <td class="name"><code>project</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>project, or this.project (for chart-based apps)</p></td>
+        </tr>
+
+    
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2644,51 +3270,42 @@ This should be used instead of getPageURL when you want to chain query string pa
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line326">line 326</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>URL for the page</p>
 </div>
@@ -2704,40 +3321,42 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">string</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getSiteInfo"><span class="type-signature"></span>getSiteInfo(project)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Helper to get siteinfo from this.siteInfo for given project, with or without .org</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="getSiteInfo"><span class="type-signature"></span>getSiteInfo<span class="signature">(project)</span><span class="type-signature"> &rarr; {Object|<a href="undefined.html">undefined</a>}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Helper to get siteinfo from this.siteInfo for given project, with or without .org</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -2768,6 +3387,7 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -2782,12 +3402,17 @@ This should be used instead of getPageURL when you want to chain query string pa
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2797,51 +3422,42 @@ This should be used instead of getPageURL when you want to chain query string pa
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line652">line 652</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>site information if present</p>
 </div>
@@ -2857,43 +3473,45 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">Object</span>
 |
 
-<span class="param-type"><a href="undefined.html">undefined</a></span>
+<span class="param-type">undefined</span>
+
 
 
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getSiteLink"><span class="type-signature"></span>getSiteLink(site)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get the wiki URL given the page name</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="getSiteLink"><span class="type-signature"></span>getSiteLink<span class="signature">(site)</span><span class="type-signature"> &rarr; {string}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Get the wiki URL given the page name</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -2924,6 +3542,7 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -2938,12 +3557,17 @@ This should be used instead of getPageURL when you want to chain query string pa
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -2953,51 +3577,42 @@ This should be used instead of getPageURL when you want to chain query string pa
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line336">line 336</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>URL for the site</p>
 </div>
@@ -3013,95 +3628,461 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">string</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="getTopviewsMonth"><span class="type-signature"></span>getTopviewsMonth( [useStartDate])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get month that would be shown in Topviews based on start date or end date, as specified</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="getUserAgent"><span class="type-signature"></span>getUserAgent<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>useStartDate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+
+            <td class="description last"><p>if false, the end date will be used</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
     
 
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
 
 
-<div class="description">
-    <p>Get user agent, if supported</p>
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>date within the month that will be used</p>
 </div>
 
 
 
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">moment</span>
 
 
 
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line660">line 660</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
+    </dd>
 </dl>
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
+    
+</dd>
 
         
+            
+<hr>
+<dt>
+    <h4 class="name" id="getTopviewsMonthURL"><span class="type-signature"></span>getTopviewsMonthURL(project [, month])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Link to /topviews for given project and chosen options</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>project</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>project to link to</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>month</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">moment</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>date that lies within the month we want to link to</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>URL</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getUserAgent"><span class="type-signature"></span>getUserAgent()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get user agent, if supported</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>user-agent</p>
 </div>
@@ -3117,40 +4098,42 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">string</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="hashCode"><span class="type-signature"></span>hashCode(str)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Generate a unique hash code from given string</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="hashCode"><span class="type-signature"></span>hashCode<span class="signature">(str)</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Generate a unique hash code from given string</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3181,6 +4164,7 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -3195,12 +4179,17 @@ This should be used instead of getPageURL when you want to chain query string pa
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3210,51 +4199,42 @@ This should be used instead of getPageURL when you want to chain query string pa
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line684">line 684</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>the hash</p>
 </div>
@@ -3270,41 +4250,48 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">String</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="isChartApp"><span class="type-signature"></span>isChartApp()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Is this one of the chart-view apps (that does not have a list view)?</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="isChartApp"><span class="type-signature"></span>isChartApp<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    <p>Is this one of the chart-view apps (that does not have a list view)?</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3314,51 +4301,42 @@ This should be used instead of getPageURL when you want to chain query string pa
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line693">line 693</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>true or false</p>
 </div>
@@ -3374,41 +4352,48 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">Boolean</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="isListApp"><span class="type-signature"></span>isListApp()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Is this one of the list-view apps?</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="isListApp"><span class="type-signature"></span>isListApp<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    <p>Is this one of the list-view apps?</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3418,51 +4403,42 @@ This should be used instead of getPageURL when you want to chain query string pa
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line701">line 701</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>true or false</p>
 </div>
@@ -3478,41 +4454,48 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">Boolean</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="isMultilangProject"><span class="type-signature"></span>isMultilangProject()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Test if the current project is a multilingual project</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="isMultilangProject"><span class="type-signature"></span>isMultilangProject<span class="signature">()</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    <p>Test if the current project is a multilingual project</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3522,51 +4505,42 @@ This should be used instead of getPageURL when you want to chain query string pa
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line709">line 709</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>is multilingual or not</p>
 </div>
@@ -3582,219 +4556,44 @@ This should be used instead of getPageURL when you want to chain query string pa
 <span class="param-type">Boolean</span>
 
 
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="mapNormalizedPageNames"><span class="type-signature"></span>mapNormalizedPageNames<span class="signature">(pages, normalizedPages)</span><span class="type-signature"> &rarr; {array}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Map normalized pages from API into a string of page names
-Used in normalizePageNames()</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>pages</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>array of page names</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>normalizedPages</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>array of normalized mappings returned by the API</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line721">line 721</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>pages with the new normalized names, if given</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">array</span>
-
 
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="massApi"><span class="type-signature"></span>massApi(params, project [, continueKey] [, dataKey] [, limit])</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="massApi"><span class="type-signature"></span>massApi<span class="signature">(params, project, continueKey<span class="signature-attributes">opt</span>, dataKey<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Deferred}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Make mass requests to MediaWiki API
+    <div class="description">
+        <p>Make mass requests to MediaWiki API
 The API normally limits to 500 pages, but gives you a 'continue' value
   to finish iterating through the resource.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
+    </div>
     
 
-<table class="params">
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -3804,9 +4603,11 @@ The API normally limits to 500 pages, but gives you a 'continue' value
         <th>Type</th>
 
         
-        <th>Attributes</th>
+        <th>Argument</th>
         
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -3827,6 +4628,7 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -3840,6 +4642,10 @@ The API normally limits to 500 pages, but gives you a 'continue' value
                 </td>
             
 
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last"><p>parameters to pass to the API</p></td>
@@ -3858,6 +4664,7 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -3871,6 +4678,10 @@ The API normally limits to 500 pages, but gives you a 'continue' value
                 </td>
             
 
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last"><p>project to query, e.g. en.wikipedia (.org is optional)</p></td>
@@ -3889,6 +4700,7 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 <span class="param-type">String</span>
 
 
+
             
             </td>
 
@@ -3904,6 +4716,12 @@ The API normally limits to 500 pages, but gives you a 'continue' value
                 </td>
             
 
+            
+                <td class="default">
+                
+                    continue
+                
+                </td>
             
 
             <td class="description last"><p>the key to look in the continue hash, if present (e.g. cmcontinue for API:Categorymembers)</p></td>
@@ -3925,6 +4743,7 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 <span class="param-type">function</span>
 
 
+
             
             </td>
 
@@ -3940,6 +4759,10 @@ The API normally limits to 500 pages, but gives you a 'continue' value
                 </td>
             
 
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last"><p>the key for the main chunk of data, in the query hash (e.g. categorymembers for API:Categorymembers)
@@ -3959,6 +4782,7 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 <span class="param-type">Number</span>
 
 
+
             
             </td>
 
@@ -3975,6 +4799,10 @@ The API normally limits to 500 pages, but gives you a 'continue' value
             
 
             
+                <td class="default">
+                
+                </td>
+            
 
             <td class="description last"><p>max number of pages to fetch</p></td>
         </tr>
@@ -3983,12 +4811,17 @@ The API normally limits to 500 pages, but gives you a 'continue' value
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -3998,51 +4831,42 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line763">line 763</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>promise resolving with data</p>
 </div>
@@ -4058,40 +4882,42 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 <span class="param-type">Deferred</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="n"><span class="type-signature"></span>n(value)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Localize Number object with delimiters</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="n"><span class="type-signature"></span>n<span class="signature">(value)</span><span class="type-signature"> &rarr; {string}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Localize Number object with delimiters</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -4122,6 +4948,7 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 <span class="param-type">Number</span>
 
 
+
             
             </td>
 
@@ -4136,12 +4963,17 @@ The API normally limits to 500 pages, but gives you a 'continue' value
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -4151,51 +4983,42 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line836">line 836</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <ul>
 <li>with locale delimiters, e.g. 1,234,567 (en-US)</li>
@@ -4213,194 +5036,48 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 <span class="param-type">string</span>
 
 
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="normalizePageNames"><span class="type-signature"></span>normalizePageNames<span class="signature">(pages)</span><span class="type-signature"> &rarr; {Deferred}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Make request to API in order to get normalized page names. E.g. masculine versus feminine namespaces on dewiki</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>pages</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">array</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>array of page names</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line846">line 846</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>promise with data fetched from API</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Deferred</span>
-
 
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="numDaysInRange"><span class="type-signature"></span>numDaysInRange()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Compute how many days are in the selected date range</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="numDaysInRange"><span class="type-signature"></span>numDaysInRange<span class="signature">()</span><span class="type-signature"> &rarr; {integer}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    <p>Compute how many days are in the selected date range</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -4410,51 +5087,42 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line864">line 864</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>number of days</p>
 </div>
@@ -4470,40 +5138,42 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 <span class="param-type">integer</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="parseQueryString"><span class="type-signature"></span>parseQueryString( [multiParam])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Generate key/value pairs of URL query string</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="parseQueryString"><span class="type-signature"></span>parseQueryString<span class="signature">(multiParam<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Object}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Generate key/value pairs of URL query string</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -4513,7 +5183,7 @@ The API normally limits to 500 pages, but gives you a 'continue' value
         <th>Type</th>
 
         
-        <th>Attributes</th>
+        <th>Argument</th>
         
 
         
@@ -4534,6 +5204,7 @@ The API normally limits to 500 pages, but gives you a 'continue' value
             
                 
 <span class="param-type">string</span>
+
 
 
             
@@ -4560,12 +5231,17 @@ The API normally limits to 500 pages, but gives you a 'continue' value
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -4575,51 +5251,42 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line873">line 873</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>key/value pairs representation of query string</p>
 </div>
@@ -4635,40 +5302,42 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 <span class="param-type">Object</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="patchUsage"><span class="type-signature"></span>patchUsage(app)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Simple metric to see how many use it (pageviews of the pageview, a meta-pageview, if you will :)</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="patchUsage"><span class="type-signature"></span>patchUsage<span class="signature">(app)</span><span class="type-signature"> &rarr; {null}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Simple metric to see how many use it (pageviews of the pageview, a meta-pageview, if you will :)</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -4699,6 +5368,7 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -4713,12 +5383,17 @@ The API normally limits to 500 pages, but gives you a 'continue' value
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -4728,101 +5403,75 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line896">line 896</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="processEnded"><span class="type-signature"></span>processEnded()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get elapsed time from this.processStart, and show it</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="processEnded"><span class="type-signature"></span>processEnded<span class="signature">()</span><span class="type-signature"> &rarr; {moment}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    <p>Get elapsed time from this.processStart, and show it</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -4832,51 +5481,42 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line917">line 917</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>Elapsed time from <code>this.processStart</code> in milliseconds</p>
 </div>
@@ -4892,41 +5532,48 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 <span class="param-type">moment</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="processStarted"><span class="type-signature"></span>processStarted()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Set timestamp of when process started</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="processStarted"><span class="type-signature"></span>processStarted<span class="signature">()</span><span class="type-signature"> &rarr; {moment}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    <p>Set timestamp of when process started</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -4936,51 +5583,42 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line909">line 909</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>start time</p>
 </div>
@@ -4996,41 +5634,43 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 <span class="param-type">moment</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="rateLimit"><span class="type-signature"></span>rateLimit(fn, delay, context)</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="rateLimit"><span class="type-signature"></span>rateLimit<span class="signature">(fn, delay, context)</span><span class="type-signature"> &rarr; {function}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Adapted from http://jsfiddle.net/dandv/47cbj/ courtesy of dandv</p>
+    <div class="description">
+        <p>Adapted from http://jsfiddle.net/dandv/47cbj/ courtesy of dandv</p>
 <p>Same as _.debounce but queues and executes all function calls</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
+    </div>
     
 
-<table class="params">
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -5061,6 +5701,7 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 <span class="param-type">function</span>
 
 
+
             
             </td>
 
@@ -5082,6 +5723,7 @@ The API normally limits to 500 pages, but gives you a 'continue' value
             
                 
 <span class="param-type">delay</span>
+
 
 
             
@@ -5107,6 +5749,7 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 <span class="param-type">object</span>
 
 
+
             
             </td>
 
@@ -5121,12 +5764,17 @@ The API normally limits to 500 pages, but gives you a 'continue' value
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -5136,51 +5784,42 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line941">line 941</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>rate-limited function to call instead of your function</p>
 </div>
@@ -5196,42 +5835,49 @@ The API normally limits to 500 pages, but gives you a 'continue' value
 <span class="param-type">function</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="resetSelect2"><span class="type-signature"></span>resetSelect2()</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="resetSelect2"><span class="type-signature"></span>resetSelect2<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Removes all Select2 related stuff then adds it back
+    <div class="description">
+        <p>Removes all Select2 related stuff then adds it back
 Also might result in the chart being re-rendered</p>
-</div>
+    </div>
+    
 
+    
 
+    
 
+    
+    
 
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -5241,100 +5887,69 @@ Also might result in the chart being re-rendered</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line972">line 972</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="rgba"><span class="type-signature"></span>rgba(value, alpha)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Change alpha level of an rgba value</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="rgba"><span class="type-signature"></span>rgba<span class="signature">(value, alpha)</span><span class="type-signature"> &rarr; {string}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Change alpha level of an rgba value</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -5363,6 +5978,7 @@ Also might result in the chart being re-rendered</p>
             
                 
 <span class="param-type">string</span>
+
 
 
             
@@ -5391,6 +6007,7 @@ Also might result in the chart being re-rendered</p>
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -5405,12 +6022,17 @@ Also might result in the chart being re-rendered</p>
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -5420,51 +6042,42 @@ Also might result in the chart being re-rendered</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line988">line 988</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>rgba value</p>
 </div>
@@ -5480,40 +6093,42 @@ Also might result in the chart being re-rendered</p>
 <span class="param-type">string</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="saveSetting"><span class="type-signature"></span>saveSetting(key, value)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Save a particular setting to session and localStorage</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="saveSetting"><span class="type-signature"></span>saveSetting<span class="signature">(key, value)</span><span class="type-signature"> &rarr; {null}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Save a particular setting to session and localStorage</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -5542,6 +6157,7 @@ Also might result in the chart being re-rendered</p>
             
                 
 <span class="param-type">string</span>
+
 
 
             
@@ -5570,6 +6186,7 @@ Also might result in the chart being re-rendered</p>
 <span class="param-type">boolean</span>
 
 
+
             
             </td>
 
@@ -5584,12 +6201,17 @@ Also might result in the chart being re-rendered</p>
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -5599,102 +6221,76 @@ Also might result in the chart being re-rendered</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line999">line 999</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="saveSettings"><span class="type-signature"></span>saveSettings()</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="saveSettings"><span class="type-signature"></span>saveSettings<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Save the selected settings within the settings modal
+    <div class="description">
+        <p>Save the selected settings within the settings modal
 Prefer this implementation over a large library like serializeObject or serializeJSON</p>
-</div>
+    </div>
+    
 
+    
 
+    
 
+    
+    
 
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -5704,100 +6300,69 @@ Prefer this implementation over a large library like serializeObject or serializ
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line1009">line 1009</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setLocalStorage"><span class="type-signature"></span>setLocalStorage(key, value)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Set a value to localStorage, using a temporary storage if localStorage is not supported</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="setLocalStorage"><span class="type-signature"></span>setLocalStorage<span class="signature">(key, value)</span><span class="type-signature"> &rarr; {Mixed}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Set a value to localStorage, using a temporary storage if localStorage is not supported</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -5828,6 +6393,7 @@ Prefer this implementation over a large library like serializeObject or serializ
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -5851,6 +6417,7 @@ Prefer this implementation over a large library like serializeObject or serializ
 <span class="param-type">Mixed</span>
 
 
+
             
             </td>
 
@@ -5865,12 +6432,17 @@ Prefer this implementation over a large library like serializeObject or serializ
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -5880,51 +6452,42 @@ Prefer this implementation over a large library like serializeObject or serializ
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line670">line 670</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>stored value</p>
 </div>
@@ -5940,41 +6503,43 @@ Prefer this implementation over a large library like serializeObject or serializ
 <span class="param-type">Mixed</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setSelect2Defaults"><span class="type-signature"></span>setSelect2Defaults(items)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Directly set items in Select2
+Currently is not able to remove underscores from page names</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="setSelect2Defaults"><span class="type-signature"></span>setSelect2Defaults<span class="signature">(items)</span><span class="type-signature"> &rarr; {array}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Directly set items in Select2
-Currently is not able to remove underscore from page names</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -6005,6 +6570,7 @@ Currently is not able to remove underscore from page names</p>
 <span class="param-type">array</span>
 
 
+
             
             </td>
 
@@ -6019,12 +6585,17 @@ Currently is not able to remove underscore from page names</p>
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -6034,51 +6605,42 @@ Currently is not able to remove underscore from page names</p>
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line1051">line 1051</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <ul>
 <li>untouched array of items</li>
@@ -6096,41 +6658,43 @@ Currently is not able to remove underscore from page names</p>
 <span class="param-type">array</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setSpecialRange"><span class="type-signature"></span>setSpecialRange(type)</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="setSpecialRange"><span class="type-signature"></span>setSpecialRange<span class="signature">(type)</span><span class="type-signature"> &rarr; {object|null}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Sets the daterange picker values and this.specialRange based on provided special range key
+    <div class="description">
+        <p>Sets the daterange picker values and this.specialRange based on provided special range key
 WARNING: not to be called on daterange picker GUI events (e.g. special range buttons)</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
+    </div>
     
 
-<table class="params">
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -6161,6 +6725,7 @@ WARNING: not to be called on daterange picker GUI events (e.g. special range but
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
@@ -6176,12 +6741,17 @@ WARNING: not to be called on daterange picker GUI events (e.g. special range but
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -6191,51 +6761,42 @@ WARNING: not to be called on daterange picker GUI events (e.g. special range but
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line1070">line 1070</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>updated this.specialRange object or null if type was invalid</p>
 </div>
@@ -6254,41 +6815,48 @@ WARNING: not to be called on daterange picker GUI events (e.g. special range but
 <span class="param-type">null</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setupDateRangeSelector"><span class="type-signature"></span>setupDateRangeSelector()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>sets up the daterange selector and adds listeners</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="setupDateRangeSelector"><span class="type-signature"></span>setupDateRangeSelector<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    <p>sets up the daterange selector and adds listeners</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -6298,104 +6866,76 @@ WARNING: not to be called on daterange picker GUI events (e.g. special range but
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line1157">line 1157</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <ul>
-<li>nothing</li>
-</ul>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setupListeners"><span class="type-signature"></span>setupListeners()</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="setupListeners"><span class="type-signature"></span>setupListeners<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Cross-application listeners
+    <div class="description">
+        <p>Cross-application listeners
 Each app has it's own setupListeners() that should call super.setupListeners()</p>
-</div>
+    </div>
+    
 
+    
 
+    
 
+    
+    
 
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -6405,103 +6945,77 @@ Each app has it's own setupListeners() that should call super.setupListeners()</
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line1125">line 1125</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setupSelect2Colors"><span class="type-signature"></span>setupSelect2Colors()</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="setupSelect2Colors"><span class="type-signature"></span>setupSelect2Colors<span class="signature">()</span><span class="type-signature"> &rarr; {CSSStylesheet}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Setup colors for Select2 entries so we can dynamically change them
+    <div class="description">
+        <p>Setup colors for Select2 entries so we can dynamically change them
 This is a necessary evil, as we have to mark them as !important
   and since there are any number of entires, we need to use nth-child selectors</p>
-</div>
+    </div>
+    
 
+    
 
+    
 
+    
+    
 
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -6511,51 +7025,42 @@ This is a necessary evil, as we have to mark them as !important
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line1103">line 1103</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>our new stylesheet</p>
 </div>
@@ -6571,145 +7076,48 @@ This is a necessary evil, as we have to mark them as !important
 <span class="param-type">CSSStylesheet</span>
 
 
-    </dd>
-</dl>
-
-    
-
-
-
-        
-            
-
-    
-
-    <h4 class="name" id="setupSettingsModal"><span class="type-signature"></span>setupSettingsModal<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Set values of form based on localStorage or defaults, add listeners</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line1144">line 1144</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
 
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="setupSettingsModal"><span class="type-signature"></span>setupSettingsModal()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Set values of form based on localStorage or defaults, add listeners</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="splash"><span class="type-signature"></span>splash<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    <p>Splash in console, just for fun</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -6719,101 +7127,677 @@ This is a necessary evil, as we have to mark them as !important
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line1290">line 1290</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-<h5>Returns:</h5>
+    
+</dd>
 
         
-<div class="param-desc">
-    <p>output</p>
-</div>
+            
+<hr>
+<dt>
+    <h4 class="name" id="showFatalErrors"><span class="type-signature"></span>showFatalErrors(errors)</h4>
+    
+    
+</dt>
+<dd>
 
+    
+    <div class="description">
+        <p>Loop through given errors and show them to the user, also creating a paste on phabricator</p>
+    </div>
+    
 
+    
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
+    
+
+    
+    
+        <h5>Parameters:</h5>
         
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>errors</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>list of error messages (strings)</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="splash"><span class="type-signature"></span>splash()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Splash in console, just for fun</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="startSpinny"><span class="type-signature"></span>startSpinny()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Add the loading indicator class and set the safeguard timeout</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="stopSpinny"><span class="type-signature"></span>stopSpinny()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Remove loading indicator class and clear the safeguard timeout</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="toast"><span class="type-signature"></span>toast(opts)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Add a site notice (Bootstrap alert)</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>as follows:
+{
+  message: '',       // {String} message - message to show
+  level: 'warning',  // one of 'success', 'info', 'warning', 'error'
+  timeout: 10,       // {Number} [timeout] - in seconds. Use 0 to show indefinitely
+  title: ''          // {String} [title] - will appear in bold and in front of the message
+}</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="toastError"><span class="type-signature"></span>toastError(message [, timeout])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Show an error to user via this.toast</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
 <span class="param-type">String</span>
 
 
-    </dd>
-</dl>
 
-    
+            
+            </td>
 
+            
+                <td class="attributes">
+                
 
+                
 
-        
+                
+                </td>
             
 
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
     
 
-    <h4 class="name" id="startSpinny"><span class="type-signature"></span>startSpinny<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
+        <tr>
+            
+                <td class="name"><code>timeout</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    10
+                
+                </td>
+            
+
+            <td class="description last"><p>in seconds</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
     
 
-
-
-<div class="description">
-    <p>Add the loading indicator class and set the safeguard timeout</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -6823,101 +7807,181 @@ This is a necessary evil, as we have to mark them as !important
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line1312">line 1312</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="toastInfo"><span class="type-signature"></span>toastInfo(message [, timeout])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Show info message to user via this.toast</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="stopSpinny"><span class="type-signature"></span>stopSpinny<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
 
     
 
+        <tr>
+            
+                <td class="name"><code>timeout</code></td>
+            
 
-
-<div class="description">
-    <p>Remove loading indicator class and clear the safeguard timeout</p>
-</div>
-
-
-
-
-
-
-
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
 
 
 
+            
+            </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
 
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    10
+                
+                </td>
+            
+
+            <td class="description last"><p>in seconds</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -6927,100 +7991,437 @@ This is a necessary evil, as we have to mark them as !important
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line1329">line 1329</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nothing</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="toastSuccess"><span class="type-signature"></span>toastSuccess(message [, timeout])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Show success message to user via this.toast</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="underscorePageNames"><span class="type-signature"></span>underscorePageNames<span class="signature">(pages)</span><span class="type-signature"> &rarr; {array}</span></h4>
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
 
     
 
+        <tr>
+            
+                <td class="name"><code>timeout</code></td>
+            
 
-
-<div class="description">
-    <p>Replace spaces with underscores</p>
-</div>
-
-
-
-
-
-
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
 
 
 
-    <h5>Parameters:</h5>
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    10
+                
+                </td>
+            
+
+            <td class="description last"><p>in seconds</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
     
 
-<table class="params">
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="toastWarn"><span class="type-signature"></span>toastWarn(message [, timeout])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Show warning to user via this.toast</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>timeout</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    10
+                
+                </td>
+            
+
+            <td class="description last"><p>in seconds</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="underscorePageNames"><span class="type-signature"></span>underscorePageNames(pages)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Replace spaces with underscores</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -7051,6 +8452,7 @@ This is a necessary evil, as we have to mark them as !important
 <span class="param-type">array</span>
 
 
+
             
             </td>
 
@@ -7065,12 +8467,17 @@ This is a necessary evil, as we have to mark them as !important
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -7080,51 +8487,42 @@ This is a necessary evil, as we have to mark them as !important
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line1340">line 1340</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>page names with underscores</p>
 </div>
@@ -7140,41 +8538,48 @@ This is a necessary evil, as we have to mark them as !important
 <span class="param-type">array</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="updateInterAppLinks"><span class="type-signature"></span>updateInterAppLinks()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Update hrefs of inter-app links to load currently selected project</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="updateInterAppLinks"><span class="type-signature"></span>updateInterAppLinks<span class="signature">()</span><span class="type-signature"> &rarr; {null}</span></h4>
-
     
 
+    
+    
 
-
-<div class="description">
-    <p>Update hrefs of inter-app links to load currently selected project</p>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -7184,101 +8589,70 @@ This is a necessary evil, as we have to mark them as !important
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line1350">line 1350</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
-
-
-
-
-
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    <p>nuttin'</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">null</span>
-
-
-    </dd>
-</dl>
+    
 
     
 
+    
 
+    
+
+    
+
+    
+
+    
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="validateDateRange"><span class="type-signature"></span>validateDateRange(params)</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="validateDateRange"><span class="type-signature"></span>validateDateRange<span class="signature">(params)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Validate the date range of given params
+    <div class="description">
+        <p>Validate the date range of given params
   and throw errors as necessary and/or set defaults</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
+    </div>
     
 
-<table class="params">
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -7307,6 +8681,7 @@ This is a necessary evil, as we have to mark them as !important
             
                 
 <span class="param-type">Object</span>
+
 
 
             
@@ -7323,12 +8698,17 @@ This is a necessary evil, as we have to mark them as !important
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -7338,51 +8718,42 @@ This is a necessary evil, as we have to mark them as !important
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line123">line 123</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>true if there were no errors, false otherwise</p>
 </div>
@@ -7398,41 +8769,43 @@ This is a necessary evil, as we have to mark them as !important
 <span class="param-type">Boolean</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="validateParams"><span class="type-signature"></span>validateParams(params)</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="validateParams"><span class="type-signature"></span>validateParams<span class="signature">(params)</span><span class="type-signature"> &rarr; {Object}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Validate basic params against what is defined in the config,
+    <div class="description">
+        <p>Validate basic params against what is defined in the config,
   and if they are invalid set the default</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
+    </div>
     
 
-<table class="params">
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -7463,6 +8836,7 @@ This is a necessary evil, as we have to mark them as !important
 <span class="param-type">Object</span>
 
 
+
             
             </td>
 
@@ -7477,12 +8851,17 @@ This is a necessary evil, as we have to mark them as !important
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -7492,51 +8871,42 @@ This is a necessary evil, as we have to mark them as !important
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line1368">line 1368</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>same params with some invalid parameters correted, as necessary</p>
 </div>
@@ -7552,41 +8922,43 @@ This is a necessary evil, as we have to mark them as !important
 <span class="param-type">Object</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="validateProject"><span class="type-signature"></span>validateProject( [multilingual])</h4>
+    
+    
+</dt>
+<dd>
 
     
-
-    <h4 class="name" id="validateProject"><span class="type-signature"></span>validateProject<span class="signature">(multilingual<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
-
-    
-
-
-
-<div class="description">
-    <p>Adds listeners to the project input for validations against the site map,
+    <div class="description">
+        <p>Adds listeners to the project input for validations against the site map,
   reverting to the old value if the new one is invalid</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
+    </div>
     
 
-<table class="params">
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -7596,9 +8968,11 @@ This is a necessary evil, as we have to mark them as !important
         <th>Type</th>
 
         
-        <th>Attributes</th>
+        <th>Argument</th>
         
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -7619,6 +8993,7 @@ This is a necessary evil, as we have to mark them as !important
 <span class="param-type">Boolean</span>
 
 
+
             
             </td>
 
@@ -7635,6 +9010,12 @@ This is a necessary evil, as we have to mark them as !important
             
 
             
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
 
             <td class="description last"><p>whether we should check if it is a multilingual project</p></td>
         </tr>
@@ -7643,12 +9024,17 @@ This is a necessary evil, as we have to mark them as !important
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -7658,51 +9044,42 @@ This is a necessary evil, as we have to mark them as !important
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line1396">line 1396</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <p>whether or not validations passed</p>
 </div>
@@ -7718,40 +9095,42 @@ This is a necessary evil, as we have to mark them as !important
 <span class="param-type">Boolean</span>
 
 
+
     </dd>
 </dl>
 
+
+        
+
     
-
-
+</dd>
 
         
             
+<hr>
+<dt>
+    <h4 class="name" id="writeMessage"><span class="type-signature"></span>writeMessage(message [, clear])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Writes message just below the chart or list of data</p>
+    </div>
+    
 
     
 
-    <h4 class="name" id="writeMessage"><span class="type-signature"></span>writeMessage<span class="signature">(message, clear)</span><span class="type-signature"> &rarr; {jQuery}</span></h4>
-
     
 
-
-
-<div class="description">
-    <p>Writes message just below the chart</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
     
+    
+        <h5>Parameters:</h5>
+        
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
     <tr>
         
@@ -7761,7 +9140,11 @@ This is a necessary evil, as we have to mark them as !important
         <th>Type</th>
 
         
+        <th>Argument</th>
+        
 
+        
+        <th>Default</th>
         
 
         <th class="last">Description</th>
@@ -7782,11 +9165,24 @@ This is a necessary evil, as we have to mark them as !important
 <span class="param-type">string</span>
 
 
+
             
             </td>
 
             
+                <td class="attributes">
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last"><p>message to write</p></td>
@@ -7805,11 +9201,28 @@ This is a necessary evil, as we have to mark them as !important
 <span class="param-type">boolean</span>
 
 
+
             
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
 
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
             
 
             <td class="description last"><p>whether to clear any existing messages</p></td>
@@ -7819,12 +9232,17 @@ This is a necessary evil, as we have to mark them as !important
     </tbody>
 </table>
 
+    
 
-
-
-
-
+    
 <dl class="details">
+    
+
+	
+
+	
+
+	
 
     
 
@@ -7834,51 +9252,42 @@ This is a necessary evil, as we have to mark them as !important
 
     
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
+	
 
-    
 
-    
 
-    
+	
 
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="shared_pv.js.html">shared/pv.js</a>, <a href="shared_pv.js.html#line1430">line 1430</a>
-    </li></ul></dd>
-    
+	
 
-    
+	
 
-    
-
-    
+	
 </dl>
 
 
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
-
-
-
-
-<h5>Returns:</h5>
-
-        
+    
+    <h5>Returns:</h5>
+    
+            
 <div class="param-desc">
     <ul>
 <li>jQuery object of message container</li>
@@ -7896,14 +9305,17 @@ This is a necessary evil, as we have to mark them as !important
 <span class="param-type">jQuery</span>
 
 
+
     </dd>
 </dl>
 
-    
-
-
 
         
+
+    
+</dd>
+
+        </dl>
     
 
     
@@ -7916,19 +9328,132 @@ This is a necessary evil, as we have to mark them as !important
 
 
 
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
 </div>
 
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="LangViews.html">LangViews</a></li><li><a href="MassViews.html">MassViews</a></li><li><a href="MetaViews.html">MetaViews</a></li><li><a href="PageViews.html">PageViews</a></li><li><a href="Pv.html">Pv</a></li><li><a href="PvConfig.html">PvConfig</a></li><li><a href="RedirectViews.html">RedirectViews</a></li><li><a href="SiteViews.html">SiteViews</a></li><li><a href="TopViews.html">TopViews</a></li></ul><h3>Global</h3><ul><li><a href="global.html#ChartHelpers">ChartHelpers</a></li><li><a href="global.html#config">config</a></li><li><a href="global.html#ListHelpers">ListHelpers</a></li><li><a href="global.html#siteMap">siteMap</a></li><li><a href="global.html#templates">templates</a></li></ul>
-</nav>
 
-<br class="clear">
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Sep 29 2016 16:45:11 GMT-0400 (EDT)
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a>
+	
+		on November 12th 2016, 1:58:24 pm
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
 </footer>
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : true,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
 </body>
 </html>

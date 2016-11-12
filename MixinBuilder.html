@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: PvConfig</title>
+	<title>Documentation Class: MixinBuilder</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -72,17 +72,14 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: PvConfig</h1>
+	<h1 class="page-title">Class: MixinBuilder</h1>
 <section>
 
 <header>
     
         <h2>
-        PvConfig
+        MixinBuilder
         </h2>
-        
-            <div class="class-description"><p>Configuration for all Pageviews applications.
-Some properties may be overriden by app-specific configs</p></div>
         
     
 </header>
@@ -94,7 +91,7 @@ Some properties may be overriden by app-specific configs</p></div>
         
 <hr>
 <dt>
-    <h4 class="name" id="PvConfig"><span class="type-signature"></span>new PvConfig()</h4>
+    <h4 class="name" id="MixinBuilder"><span class="type-signature"></span>new MixinBuilder(superclass)</h4>
     
     
 </dt>
@@ -102,7 +99,7 @@ Some properties may be overriden by app-specific configs</p></div>
 
     
     <div class="description">
-        <p>set instance variable (config), also defining any private methods</p>
+        <p>set super class instance variable</p>
     </div>
     
 
@@ -112,92 +109,54 @@ Some properties may be overriden by app-specific configs</p></div>
 
     
     
+        <h5>Parameters:</h5>
+        
 
-    
-<dl class="details">
-    
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
 
-	
+        <th>Type</th>
 
-	
+        
 
-	
+        
 
-    
+        <th class="last">Description</th>
+    </tr>
+    </thead>
 
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
+    <tbody>
     
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Members</h3>
-
-        <dl>
+        <tr>
             
-<hr>
-<dt class="name" id="circularTooltips">
-    <h4 id="circularTooltips"><span class="type-signature"></span>circularTooltips<span class="type-signature"></span></h4>
+                <td class="name"><code>superclass</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">class</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
 
     
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Get config for tooltips shown on circular charts, used by Chart.js</p>
-    </div>
-    
+    </tbody>
+</table>
 
     
 
@@ -242,9 +201,33 @@ Some properties may be overriden by app-specific configs</p></div>
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 </dd>
 
-        </dl>
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
     
 
     
@@ -254,7 +237,7 @@ Some properties may be overriden by app-specific configs</p></div>
             
 <hr>
 <dt>
-    <h4 class="name" id="linearTooltips"><span class="type-signature"></span>linearTooltips( [mode])</h4>
+    <h4 class="name" id="with"><span class="type-signature"></span>with(mixins)</h4>
     
     
 </dt>
@@ -262,7 +245,7 @@ Some properties may be overriden by app-specific configs</p></div>
 
     
     <div class="description">
-        <p>Get config for tooltips shown on linear charts, used by Chart.js</p>
+        <p>blend given classes with current superclass</p>
     </div>
     
 
@@ -299,13 +282,13 @@ Some properties may be overriden by app-specific configs</p></div>
 
         <tr>
             
-                <td class="name"><code>mode</code></td>
+                <td class="name"><code>mixins</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
+<span class="param-type">class</span>
 
 
 
@@ -315,18 +298,18 @@ Some properties may be overriden by app-specific configs</p></div>
             
                 <td class="attributes">
                 
-                    &lt;optional><br>
-                
 
                 
 
+                
+                    &lt;repeatable><br>
                 
                 </td>
             
 
             
 
-            <td class="description last"><p>x-axis or label depending on chart type</p></td>
+            <td class="description last"></td>
         </tr>
 
     
@@ -389,6 +372,10 @@ Some properties may be overriden by app-specific configs</p></div>
     <h5>Returns:</h5>
     
             
+<div class="param-desc">
+    <p>classes</p>
+</div>
+
 
 
 <dl>
@@ -397,7 +384,7 @@ Some properties may be overriden by app-specific configs</p></div>
     </dt>
     <dd>
         
-<span class="param-type">Object</span>
+<span class="param-type">Array</span>
 
 
 
