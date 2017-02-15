@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: RedirectViews</title>
+	<title>Documentation Class: UserViews</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -72,16 +72,16 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: RedirectViews</h1>
+	<h1 class="page-title">Class: UserViews</h1>
 <section>
 
 <header>
     
         <h2>
-        RedirectViews
+        UserViews
         </h2>
         
-            <div class="class-description"><p>Main RedirectViews class</p></div>
+            <div class="class-description"><p>Main UserViews class</p></div>
         
     
 </header>
@@ -93,7 +93,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="RedirectViews"><span class="type-signature"></span>new RedirectViews()</h4>
+    <h4 class="name" id="UserViews"><span class="type-signature"></span>new UserViews()</h4>
     
     
 </dt>
@@ -101,7 +101,7 @@
 
     
     <div class="description">
-        <p>set instance variables and boot the app via pv.constructor</p>
+        <p>set instance variables and initial setup in pv.constructor</p>
     </div>
     
 
@@ -283,6 +283,8 @@
       MERGE in this.config.chartConfig[this.chartType].dataset(this.config.colors[0])
     }
   ],
+  oldest: moment(),
+  newest: moment(),
   totalViewsSet: [1,2,3,4],
   sum: 10,
   average: 2,
@@ -347,7 +349,7 @@
 <dd>
     
     <div class="description">
-        <p>Get instance of Typeahead plugin</p>
+        <p>Get the instance of the Typeahead plugin</p>
     </div>
     
 
@@ -546,7 +548,7 @@ Called when the view is reset.</p>
 
             
 
-            <td class="description last"><p>label for the dataset</p></td>
+            <td class="description last"><p>label for the dataset (e.g. category:blah, page pile 24, etc)</p></td>
         </tr>
 
     
@@ -686,6 +688,135 @@ Called when the view is reset.</p>
             
 <hr>
 <dt>
+    <h4 class="name" id="checkEditCount"><span class="type-signature"></span>checkEditCount(user)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Check the user's edit count and if over 50,000,
+  warn that fetching pages created might take a while...</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>userneame</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
     <h4 class="name" id="exportCSV"><span class="type-signature"></span>exportCSV()</h4>
     
     
@@ -765,7 +896,7 @@ With the prepended data:text/csv this should cause the browser to download the d
             
 <hr>
 <dt>
-    <h4 class="name" id="getExportFilename"><span class="type-signature"></span>getExportFilename()</h4>
+    <h4 class="name" id="getBadgeMarkup"><span class="type-signature"></span>getBadgeMarkup(badgeCode)</h4>
     
     
 </dt>
@@ -773,7 +904,492 @@ With the prepended data:text/csv this should cause the browser to download the d
 
     
     <div class="description">
-        <p>Get informative filename without extension to be used for export options</p>
+        <p>Given the badge code provided by the Wikidata API, return a image tag of the badge</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>badgeCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>as defined in this.config.badges</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>HTML markup for the image</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getInterwikiData"><span class="type-signature"></span>getInterwikiData(dbName, pageName)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Query Wikidata to find data about a given page across all sister projects</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>dbName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>database name of source project</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>pageName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>name of page we want to get data about</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <ul>
+<li>Promise resolving with interwiki data</li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Deferred</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getPageNameFromURL"><span class="type-signature"></span>getPageNameFromURL(url)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Parse wiki URL for the page name</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>full URL to a wiki page</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>page name</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+|
+
+<span class="param-type">null</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getPagesCreated"><span class="type-signature"></span>getPagesCreated()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get pages created by user via /musikanimal/api</p>
     </div>
     
 
@@ -839,7 +1455,7 @@ With the prepended data:text/csv this should cause the browser to download the d
     
             
 <div class="param-desc">
-    <p>filename without an extension</p>
+    <p>promise resolving with data</p>
 </div>
 
 
@@ -850,7 +1466,7 @@ With the prepended data:text/csv this should cause the browser to download the d
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">Deferred</span>
 
 
 
@@ -867,7 +1483,7 @@ With the prepended data:text/csv this should cause the browser to download the d
             
 <hr>
 <dt>
-    <h4 class="name" id="getPageViewsData"><span class="type-signature"></span>getPageViewsData(redirectData)</h4>
+    <h4 class="name" id="getPageViewsData"><span class="type-signature"></span>getPageViewsData(pages)</h4>
     
     
 </dt>
@@ -911,7 +1527,7 @@ With the prepended data:text/csv this should cause the browser to download the d
 
         <tr>
             
-                <td class="name"><code>redirectData</code></td>
+                <td class="name"><code>pages</code></td>
             
 
             <td class="type">
@@ -928,7 +1544,7 @@ With the prepended data:text/csv this should cause the browser to download the d
 
             
 
-            <td class="description last"><p>as given by the getRedirects promise</p></td>
+            <td class="description last"><p>as given by the getPagesCreated promise</p></td>
         </tr>
 
     
@@ -1102,7 +1718,7 @@ With the prepended data:text/csv this should cause the browser to download the d
                 </td>
             
 
-            <td class="description last"><p>whether or not to exclude sort, direction and other parameters irrelevant to the query
+            <td class="description last"><p>whether or not to include the page name, and exclude sort and direction
   in the returned object. This is for the purposes of generating a unique cache key for params affecting the API queries</p></td>
         </tr>
 
@@ -1179,160 +1795,6 @@ With the prepended data:text/csv this should cause the browser to download the d
     <dd>
         
 <span class="param-type">Object</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="getRedirects"><span class="type-signature"></span>getRedirects(pageName)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Get all redirects of a page</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>pageName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>name of page we want to get data about</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    <ul>
-<li>Promise resolving with redirect data</li>
-</ul>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Deferred</span>
 
 
 
@@ -1530,6 +1992,158 @@ With the prepended data:text/csv this should cause the browser to download the d
             
 <hr>
 <dt>
+    <h4 class="name" id="getUserLink"><span class="type-signature"></span>getUserLink(user)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get a full link of the user page for the given user</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>HTML markup</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
     <h4 class="name" id="initialize"><span class="type-signature"></span>initialize()</h4>
     
     
@@ -1696,7 +2310,7 @@ Should only be called on initial page load, until we decide to support pop state
 
     
     <div class="description">
-        <p>Process the redirectviews for the article and options entered
+        <p>Process the langviews for the article and options entered
 Called when submitting the form</p>
     </div>
     
@@ -1951,7 +2565,7 @@ Called when submitting the form</p>
 
     
     <div class="description">
-        <p>Render list of redirectviews into view</p>
+        <p>Render list of userviews into view</p>
     </div>
     
 
@@ -2221,6 +2835,181 @@ Called when submitting the form</p>
     
 
     
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setupNamespaceSelector"><span class="type-signature"></span>setupNamespaceSelector( [namespace])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Fetch namespaces and populate the namespace selector</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>namespace</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Integer</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last"><p>namespace number to default to</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>Empty promise</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Deferred</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
 
     
 </dd>
